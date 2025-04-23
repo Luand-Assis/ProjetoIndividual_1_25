@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styleCL.css">
+    <script src="../scripts/scriptCL.js"></script>
+    <title>Cadastro</title>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <nav>
+            Lorem ipsum
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="card cadastro">
+            <div class="title">
+                <h3>Novo Pinguim</h3>
+                <div class="grupo">
+                    <div class="form">
+                        
+                        <div class="campo">
+                            <p>Email</p>
+                            <input type="text" id="inputEmail" onchange="verifyEmail()">
+                            <div id="divMensagemEmail"></div>
+                        </div>
+                        <div class="campo">
+                            <p>Telefone</p>
+                            <input type="text" id="inputTelefone" maxlength="11">
+                        </div>
+                        <div class="campo">
+                            <p>Crie uma Senha</p>
+                            <input type="text" id="inputPassword" onchange="securityPasswd()">
+                        </div>
+                        <div class="campo">
+                            <p>Confirmar Senha</p>
+                            <input type="text" id="inputPasswordConfirm" onchange="verifyPasswd()">
+                            <div id="divPasswdVerify"></div>
+                        </div>
+                    </div>
+                    <div class="pinguim">
+                        <div class="campo">
+                            <p>Crie um Nome de Pinguim</p>
+                            <input type="text" id="inputUsername" onchange="verifyUsername()">
+                            <div id="divMensagemUser"></div>
+                        </div>
+                        <div id="div_pinguimCor" class="foto_pinguim"></div>
+                        <div class="cor">
+                            <div onclick="pinguimAzul()" id="azul"></div>
+                            <div onclick="pinguimPreto()" id="preto"></div>
+                            <div onclick="pinguimAmarelo()" id="amarelo"></div>
+                            <div onclick="pinguimLaranja()" id="laranja"></div>
+                            <div onclick="pinguimVerde()" id="verde"></div>
+                            <div onclick="pinguimVermelho()" id="vermelho"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="./login.html">Já tenho uma conta</a>           
+            <button class="botao">Cadastrar</button>
+        </div>
+    </div>
+
+    <footer class="end">
+        <p>Lorem ipsum</p>
+    </footer>
+
+</body>
+</html>
