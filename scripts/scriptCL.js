@@ -11,11 +11,11 @@ username = inputUsername.value;
 var mensagemUsername = '';
 
     if (username.length < 4 || username.length > 12) {
-        mensagemUsername = `<span style="color: red;">Escolha um nome com no mínimo 3 letras e no máximo 12.</span>`
+        mensagemUsername = `<span style="color: red;">Escolha um nome com no mínimo 4 letras e no máximo 12.</span>`
     } else {
         mensagemUsername = `<span style="color: green;">Nome válido</span>`
     }
-    divMensagemUser.innerHTML = mensagemUsername;
+    divVerifyUsername.innerHTML = mensagemUsername;
 };
 
 // ----- VERIFICAÇÃO DE EMAIL -----
@@ -28,13 +28,39 @@ var mensagemEmail = '';
     } else {
         mensagemEmail = `<span style="color: red;">Email inválido.</span>`;
     }
-    divMensagemEmail.innerHTML = mensagemEmail;
+    divVerifyEmail.innerHTML = mensagemEmail;
 };
 
 // ----- VERIFICAÇÃO DE SENHA -----
 function securityPasswd() {
 passwd = inputPassword.value;
 var mensagemPasswd = '';
+
+    if (passwd.length < 8) {
+        mensagemPasswd = `<span style="color: red;">A senha deve conter no mínimo 8 caracteres.<br>Incluir pelo menos 1 caractere especial.</span>`;
+    } else if (
+        passwd.includes('!') ||
+        passwd.includes('@') ||
+        passwd.includes('#') ||
+        passwd.includes('$') ||
+        passwd.includes('%') ||
+        passwd.includes('&') ||
+        passwd.includes('*') ||
+        passwd.includes('(') ||
+        passwd.includes(')') ||
+        passwd.includes('-') ||
+        passwd.includes('_') ||
+        passwd.includes('=') ||
+        passwd.includes('+') ||
+        passwd.includes('?') ||
+        passwd.includes('<') ||
+        passwd.includes('>')
+    ) {
+        mensagemPasswd = `<span style="color: green;">Senha Válida.</span>`;
+    } else {
+        mensagemPasswd = `<span style="color: red;">Deve incluir pelo menos 1 caractere especial.</span>`
+    }
+    divSecurityPasswd.innerHTML = mensagemPasswd;
 };
 
 
@@ -47,7 +73,7 @@ var mensagemPasswdVerify = '';
     } else {
         mensagemPasswdVerify = `<span style="color: green;">Senha válida.</span>`;
     }
-    divPasswdVerify.innerHTML = mensagemPasswdVerify;
+    divVerifyPasswd.innerHTML = mensagemPasswdVerify;
 };
 
 // ----- DEFININDO AS CORES DOS PINGUINS -----

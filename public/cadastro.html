@@ -24,8 +24,8 @@
                         
                         <div class="campo">
                             <p>Email</p>
-                            <input type="text" id="inputEmail" onchange="verifyEmail()">
-                            <div id="divMensagemEmail"></div>
+                            <input type="text" id="inputEmail" oninput="verifyEmail()">
+                            <div id="divVerifyEmail"></div>
                         </div>
                         <div class="campo">
                             <p>Telefone</p>
@@ -33,19 +33,20 @@
                         </div>
                         <div class="campo">
                             <p>Crie uma Senha</p>
-                            <input type="text" id="inputPassword" onchange="securityPasswd()">
+                            <input type="text" id="inputPassword" oninput="securityPasswd()">
+                            <div id="divSecurityPasswd"></div>
                         </div>
                         <div class="campo">
                             <p>Confirmar Senha</p>
-                            <input type="text" id="inputPasswordConfirm" onchange="verifyPasswd()">
-                            <div id="divPasswdVerify"></div>
+                            <input type="text" id="inputPasswordConfirm" oninput="verifyPasswd()">
+                            <div id="divVerifyPasswd"></div>
                         </div>
                     </div>
                     <div class="pinguim">
                         <div class="campo">
                             <p>Crie um Nome de Pinguim</p>
-                            <input type="text" id="inputUsername" onchange="verifyUsername()">
-                            <div id="divMensagemUser"></div>
+                            <input type="text" id="inputUsername" oninput="verifyUsername()">
+                            <div id="divVerifyUsername"></div>
                         </div>
                         <div id="div_pinguimCor" class="foto_pinguim"></div>
                         <div class="cor">
