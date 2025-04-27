@@ -11,11 +11,11 @@
 
     <header class="cabecalho">
         <nav>
-            Lorem ipsum
+            JOGO DA MEMÓRIA
         </nav>
     </header>
     
-    <div class="container">
+    <main class="container">
         <div class="card cadastro">
             <div class="title">
                 <h3>Novo Pinguim</h3>
@@ -26,10 +26,6 @@
                             <p>Email</p>
                             <input type="text" id="inputEmail" oninput="verifyEmail()">
                             <div id="divVerifyEmail"></div>
-                        </div>
-                        <div class="campo">
-                            <p>Telefone</p>
-                            <input type="text" id="inputTelefone" maxlength="11">
                         </div>
                         <div class="campo">
                             <p>Crie uma Senha</p>
@@ -61,9 +57,9 @@
                 </div>
             </div>
             <a href="./login.html">Já tenho uma conta</a>           
-            <button class="botao">Cadastrar</button>
+            <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
-    </div>
+    </main>
 
     <footer class="end">
         <p>Lorem ipsum</p>

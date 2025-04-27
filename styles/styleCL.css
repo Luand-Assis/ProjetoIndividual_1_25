@@ -3,13 +3,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: fantasy;
+    background-color: var(--BrancoNeve);
 }
 
 :root {
-    --PrimaryColor: #blablabla;
     --AzulCéu: #0092D8;
     --AzulGelo: #00C0F3;
-    --BrancoNeve: #FFFFFF;
+    --BrancoNeve: #ebebeb;
     --AmareloPinguim: #FFEC00;
     --CinzaClaro: #C7D6DF;
     --AzulEscuro: #005B9E;
@@ -20,11 +20,13 @@ body {
     border: 2px solid blue;
     display: flex;
     padding: 20px;
+    background-color: var(--AzulEscuro);
+    box-shadow: 0px 0px 10px black;
 }
 
 /* ----- CONTEUDO DO SITE ----- */
 .container {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,10 +35,13 @@ body {
 }
 
 .card {
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 10px;
     display: flex;
     flex-direction: column;
+    border-radius: 50px;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    background-color: var(--CinzaClaro);
 }
 
 .card .cadastro {
@@ -50,8 +55,8 @@ body {
 }
 
 .title h3 {
+    /* border: 2px solid yellow; */
     margin: 0;
-    border: 2px solid yellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +73,7 @@ body {
 .form {
     display: flex;
     flex-direction: column;
-    border: 2px solid brown;
+    /* border: 2px solid brown; */
     margin: 25px 50px 0;
     width: 400px;
 }
@@ -76,7 +81,7 @@ body {
 .grupo .form {
     display: flex;
     flex-direction: column;
-    border: 2px solid brown;
+    /* border: 2px solid brown; */
     margin: 25px 50px 0;
     width: 400px;
     order: 2;
@@ -96,14 +101,17 @@ body {
 
 .campo input {
     width: 80%;
-    height: 30px;
+    height: 40px;
     font-family: fantasy;
     font-size: 20px;
     text-align: center;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 0px 0px 7px black;
 }
 
 .grupo .pinguim {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     display: flex;
     flex-direction: column;
     margin: 25px 50px 0;
@@ -112,15 +120,18 @@ body {
 }
 
 .pinguim .foto_pinguim {
-    border: 2px solid salmon;
+    border: 1px solid black;
     margin: 15px;
     width: 200px;
     height: 200px;
+    border-radius: 15px;
+    align-self: center;
+    background-color: var(--BrancoNeve);
     background-image: url(../ColorPenguin/pinguim_1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    align-self: center;
+    box-shadow: 0px 0px 5px black;
 }
 
 /* ----- CORES DOS PINGUINS ----- */
@@ -128,9 +139,10 @@ body {
     display: flex;
     justify-content: row;
     justify-content: space-evenly;
-    background-color: yellowgreen;
+    background-color: #b6c2c9;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
 }
 .pinguim .cor #azul {
     border: 1px solid black;
@@ -177,7 +189,7 @@ body {
 
 /* ----- FINALIZANDO O CARD <a> + <button> ----- */
 .card a {
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     display: flex;
     justify-content: center;
     margin-top: 5px;
@@ -185,14 +197,23 @@ body {
 }
 
 .card .botao {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     margin-top: 15px;
     align-self: center;
-    width: 45%;
-    height: 40px;
+    width: 35%;
+    height: 50px;
     font-size: 30px;
+    border-radius: 20px;
+    background-color: var(--AmareloPinguim);
+    border-style: none;
+    box-shadow: 0px 0px 5px black;
 }
-
+.card .botao:hover {
+    background-color: #d3c82b;
+    width: 36%;
+    height: 51px;
+    transition: 0.2s;
+}
 
 /* ----- FOOTER ----- */
 .end {
@@ -200,4 +221,6 @@ body {
     text-align: center;
     padding: 20px;
     font-size: 14px;
+    background-color: var(--AzulEscuro);
+    box-shadow: 0px 0px 10px black;
 }

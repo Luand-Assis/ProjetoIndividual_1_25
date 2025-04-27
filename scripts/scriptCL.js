@@ -5,15 +5,22 @@ var telefone = 0;
 var passwd = 0;
 var passwdConfirm = 0;
 
+var validacao_1 = false;
+var validacao_2 = false;
+var validacao_3 = false;
+var validacao_4 = false;
+
 // ----- VERIFICAÇÃO DO USERNAME -----
 function verifyUsername() {
 username = inputUsername.value;
 var mensagemUsername = '';
 
     if (username.length < 4 || username.length > 12) {
-        mensagemUsername = `<span style="color: red;">Escolha um nome com no mínimo 4 letras e no máximo 12.</span>`
+        mensagemUsername = `<span style="color: red;">Escolha um nome com no mínimo 4 letras e no máximo 12.</span>`;
+        validacao_1 = false;
     } else {
         mensagemUsername = `<span style="color: green;">Nome válido</span>`
+        validacao_1 = true;
     }
     divVerifyUsername.innerHTML = mensagemUsername;
 };
@@ -25,8 +32,10 @@ var mensagemEmail = '';
 
     if (email.includes('@')) {
         mensagemEmail = `<span style="color: green;">Email válido.</span>`
+        validacao_2 = true;
     } else {
         mensagemEmail = `<span style="color: red;">Email inválido.</span>`;
+        validacao_2 = false;
     }
     divVerifyEmail.innerHTML = mensagemEmail;
 };
@@ -38,6 +47,7 @@ var mensagemPasswd = '';
 
     if (passwd.length < 8) {
         mensagemPasswd = `<span style="color: red;">A senha deve conter no mínimo 8 caracteres.<br>Incluir pelo menos 1 caractere especial.</span>`;
+        validacao_3 = false;
     } else if (
         passwd.includes('!') ||
         passwd.includes('@') ||
@@ -57,8 +67,10 @@ var mensagemPasswd = '';
         passwd.includes('>')
     ) {
         mensagemPasswd = `<span style="color: green;">Senha Válida.</span>`;
+        validacao_3 = true;
     } else {
         mensagemPasswd = `<span style="color: red;">Deve incluir pelo menos 1 caractere especial.</span>`
+        validacao_3 = false;
     }
     divSecurityPasswd.innerHTML = mensagemPasswd;
 };
@@ -70,8 +82,10 @@ var mensagemPasswdVerify = '';
 
     if (passwdConfirm != passwd) {
         mensagemPasswdVerify = `<span style="color: red;">Senha incorreta.</span>`;
-    } else {
+        validacao_4 = false;
+    } else if (passwdConfirm === passwd && validacao_3 == true) {
         mensagemPasswdVerify = `<span style="color: green;">Senha válida.</span>`;
+        validacao_4 = true;
     }
     divVerifyPasswd.innerHTML = mensagemPasswdVerify;
 };
@@ -99,4 +113,19 @@ function pinguimVerde() {
 
 function pinguimVermelho() {
     document.getElementById("div_pinguimCor").style.backgroundImage = "url('../ColorPenguin/pinguim_6.png')";
+}
+
+// ----- CADASTRAR -----
+function cadastrar() {
+    if (
+        validacao_1 == true &&
+        validacao_2 == true &&
+        validacao_3 == true &&
+        validacao_4 == true
+    ) {
+        alert('Novo pinguim cadastrado com sucesso!')
+        window.location = 'login.html';
+    } else {
+        alert('Erro')
+    }
 }
