@@ -126,6 +126,7 @@ function cadastrar() {
         alert('Novo pinguim cadastrado com sucesso!')
         window.location = 'login.html';
     } else {
-        alert('Erro')
+        divErro.innerHTML = `<div id="divMensagemErro">Erro ao criar novo pinguim! <br>Tente novamente.</div> `;
+        // divMensagemErro.innerHTML = `Erro ao criar novo pinguim! <br>Tente novamente.`;
     }
 }
