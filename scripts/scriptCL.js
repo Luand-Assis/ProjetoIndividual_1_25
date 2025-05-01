@@ -10,6 +10,17 @@ var validacao_2 = false;
 var validacao_3 = false;
 var validacao_4 = false;
 
+// ----- BOTÕES DO HEADER -----
+function paginaLogin() {
+    window.location = 'login.html';
+}
+function paginaCadastro() {
+    window.location = 'cadastro.html';
+}
+function paginaIndex() {
+    window.location = 'index.html';
+}
+
 // ----- VERIFICAÇÃO DO USERNAME -----
 function verifyUsername() {
 username = inputUsername.value;

@@ -22,6 +22,57 @@ body {
     padding: 20px;
     background-color: var(--AzulEscuro);
     box-shadow: 0px 0px 10px black;
+    justify-content: space-between;
+}
+
+.logo {
+    /* border: 2px solid black; */
+    width: 130px;
+    height: 45px;
+    background-image: url(../logo/johndeere-memoria-01-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.links {
+    /* border: 2px solid orange; */
+    display: flex;
+    width: 65%;
+    height: 45px;
+    justify-content: flex-end;
+}
+.divisor {
+    border: 1px solid rgb(24, 24, 24);
+}
+
+.botaoCL {
+    /* border: 2px solid black; */
+    display: flex;
+    width: 30%;
+    height: 40px;
+    gap: 20px;
+}
+.botaoCL button {
+    width: 120px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+#loginButton {
+    background-color: var(--CinzaClaro);
+}
+#loginButton:hover {
+    background-color: #9ea9af;
+}
+#cadastroButton {
+    background-color: var(--AmareloPinguim);
+}
+#cadastroButton:hover {
+    background-color: #d3c82b;
 }
 
 /* ----- CONTEUDO DO SITE ----- */
