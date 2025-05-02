@@ -1,0 +1,68 @@
+/* ----- CFG GLOBAL ----- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    background-color: var(--BrancoNeve);
+}
+
+:root {
+    --AzulCéu: #0092D8;
+    --AzulGelo: #00C0F3;
+    --BrancoNeve: #ebebeb;
+    --AmareloPinguim: #FFEC00;
+    --CinzaClaro: #C7D6DF;
+    --AzulEscuro: #005B9E;
+}
+
+header {
+    border: 1px solid black;
+    display: flex;
+    background-color: var(--AzulEscuro);
+    padding: 20px;
+    box-shadow: 0px 0px 10px black;
+}
+
+header nav {
+    border: 1px solid black;
+    display: flex;
+    width: 80%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    border: 1px solid black;
+    width: 10%;
+    background-image: url(../logo/johndeere-memoria-01-logo.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tour {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    height: 40px;
+    width: 33%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main {
+    border: 1px solid green;
+    display: flex;
+    padding: 10px;
+    height: 100%;
+}
+
+footer {
+    border: 1px solid black;
+    display: flex;
+    background-color: var(--AzulEscuro);
+    padding: 40px;
+    box-shadow: 0px 0px 10px black;
+}
+
