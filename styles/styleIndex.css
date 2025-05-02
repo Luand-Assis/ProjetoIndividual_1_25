@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     background-color: var(--AzulEscuro);
     padding: 20px;
@@ -24,31 +24,74 @@ header {
 }
 
 header nav {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
-    width: 80%;
+    width: 100%;
     height: 40px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    border: 1px solid black;
-    width: 10%;
+    /* border: 1px solid rgb(187, 22, 22); */
+    display: flex;
+    width: 20%;
+    height: 40px;
+}
+#logoImagem {
+    /* border: 1px solid blue; */
     background-image: url(../logo/johndeere-memoria-01-logo.png);
+    height: 40px;
+    width: 120px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .tour {
+    /* border: 1px solid rgb(26, 156, 26); */
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    font-size: 24px;
     height: 40px;
-    width: 33%;
+    width: 40%;
     justify-content: space-around;
     align-items: center;
+}
+.tour a {
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+}
+
+.botoes {
+    /* border: 1px solid rgb(20, 112, 173); */
+    display: flex;
+    height: 40px;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botoes button {
+    width: 100px;
+    font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
+    height: 35px;
+    border: none;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.botoes #loginButton {
+    background-color: var(--CinzaClaro);
+}
+#divisor {
+    border: 1px solid rgb(24, 24, 24);
+    height: 40px;
+}
+.botoes #cadastroButton {
+    background-color: var(--AmareloPinguim);
 }
 
 main {

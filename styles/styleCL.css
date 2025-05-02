@@ -5,7 +5,6 @@ body {
     font-family: fantasy;
     background-color: var(--BrancoNeve);
 }
-
 :root {
     --AzulCéu: #0092D8;
     --AzulGelo: #00C0F3;
@@ -14,7 +13,6 @@ body {
     --CinzaClaro: #C7D6DF;
     --AzulEscuro: #005B9E;
 }
-
 /* ----- HEADER ----- */
 .cabecalho {
     /* border: 2px solid blue; */
@@ -24,7 +22,6 @@ body {
     box-shadow: 0px 0px 10px black;
     justify-content: space-between;
 }
-
 .logo {
     /* border: 2px solid black; */
     width: 130px;
@@ -35,7 +32,6 @@ body {
     background-position: center;
     cursor: pointer;
 }
-
 .links {
     /* border: 2px solid orange; */
     display: flex;
@@ -46,7 +42,6 @@ body {
 .divisor {
     border: 1px solid rgb(24, 24, 24);
 }
-
 .botaoCL {
     /* border: 2px solid black; */
     display: flex;
@@ -74,7 +69,6 @@ body {
 #cadastroButton:hover {
     background-color: #d3c82b;
 }
-
 /* ----- CONTEUDO DO SITE ----- */
 .container {
     /* border: 2px solid green; */
@@ -85,7 +79,6 @@ body {
     height: 90vh;
     background-image: url(../giphys/snow-16036.gif);
 }
-
 .card {
     border: 1px solid black;
     padding: 10px;
@@ -95,17 +88,14 @@ body {
     box-shadow: 0px 0px 15px rgb(0, 0, 0);
     background-color: var(--CinzaClaro);
 }
-
 .card .cadastro {
     width: 100%;
     height: 100%;
 }
-
 .card .login {
     width: 100%;
     height: 100%;
 }
-
 .title h3 {
     /* border: 2px solid yellow; */
     margin: 0;
@@ -116,7 +106,6 @@ body {
     height: 40px;
     font-size: 40px;
 }
-
 #divErro {
     width: 30%;
     margin-top: 10px;
@@ -124,7 +113,6 @@ body {
     align-items: center;
     align-self: center;
 }
-
 #divMensagemErro {
     border: 1px solid salmon;
     display: flex;
@@ -139,12 +127,10 @@ body {
     margin-top: 10px;
     font-size: 18px;
 }
-
 .grupo {
     display: flex;
     flex-direction: row;
 }
-
 .form {
     display: flex;
     flex-direction: column;
@@ -152,7 +138,6 @@ body {
     margin: 25px 50px 0;
     width: 400px;
 }
-
 .grupo .form {
     display: flex;
     flex-direction: column;
@@ -161,19 +146,16 @@ body {
     width: 400px;
     order: 2;
 }
-
 .campo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 .campo p {
     margin-bottom: 1px;
     font-size: 25px;
 }
-
 .campo input {
     width: 80%;
     height: 40px;
@@ -184,7 +166,6 @@ body {
     border-style: none;
     box-shadow: 0px 0px 7px black;
 }
-
 .grupo .pinguim {
     /* border: 2px solid orange; */
     display: flex;
@@ -193,7 +174,6 @@ body {
     width: 400px;
     order: 1;
 }
-
 .pinguim .foto_pinguim {
     border: 1px solid black;
     margin: 15px;
@@ -208,7 +188,6 @@ body {
     background-position: center;
     box-shadow: 0px 0px 5px black;
 }
-
 /* ----- CORES DOS PINGUINS ----- */
 .pinguim .cor {
     display: flex;
@@ -261,7 +240,6 @@ body {
     height: 30px;
     border-radius: 5px;
 }
-
 /* ----- FINALIZANDO O CARD <a> + <button> ----- */
 .card a {
     /* border: 2px solid pink; */
@@ -270,7 +248,6 @@ body {
     margin-top: 5px;
     font-size: 15px;
 }
-
 .card .botao {
     /* border: 2px solid purple; */
     margin-top: 15px;
@@ -289,7 +266,6 @@ body {
     height: 51px;
     transition: 0.2s;
 }
-
 /* ----- FOOTER ----- */
 .end {
     border: 2px solid gray;
