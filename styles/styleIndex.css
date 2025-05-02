@@ -86,12 +86,18 @@ header nav {
 .botoes #loginButton {
     background-color: var(--CinzaClaro);
 }
+#loginButton:hover {
+    background-color: #9ea9af;
+}
 #divisor {
     border: 1px solid rgb(24, 24, 24);
     height: 40px;
 }
 .botoes #cadastroButton {
     background-color: var(--AmareloPinguim);
+}
+#cadastroButton:hover {
+    background-color: #d3c82b;
 }
 
 main {
