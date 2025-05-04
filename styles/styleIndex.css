@@ -84,10 +84,11 @@ header nav {
     border-radius: 5px;
 }
 .botoes #loginButton {
-    background-color: var(--CinzaClaro);
+    background-color: var(--AzulCéu);
 }
 #loginButton:hover {
-    background-color: #9ea9af;
+    background-color: #0f6891;
+    transition: 0.3s;
 }
 #divisor {
     border: 1px solid rgb(24, 24, 24);
@@ -98,19 +99,70 @@ header nav {
 }
 #cadastroButton:hover {
     background-color: #d3c82b;
+    transition: 0.3s;
 }
 
-main {
+.container {
     border: 1px solid green;
-    display: flex;
-    padding: 10px;
+    padding: 40px;
     height: 100%;
+}
+
+#introducao {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+#introducao .pt1 {
+    border: 2px solid pink;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.pt1 h2 {
+    font-size: 50px;
+    font-weight: 100;
+}
+.pt1 p {
+    font-size: 24px;
+}
+.pt1 button {
+    height: 50px;
+    width: 20%;
+    background-color: var(--AmareloPinguim);
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+.pt1 button:hover {
+    background-color: #d3c82b;
+    transition: 0.3s;
+}
+#introducao .memory-card {
+    border: 2px solid purple;
+    display: flex;
+    background-image: url(../imgs/MemoryCard.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    width: 40%;
+}
+
+.sobre {
+
+}
+
+.mini-game {
+
 }
 
 footer {
     border: 1px solid black;
     display: flex;
-    background-color: var(--AzulEscuro);
+    background-color: var(--AzulCéu);
     padding: 40px;
     box-shadow: 0px 0px 10px black;
 }
