@@ -198,6 +198,10 @@ header nav {
 #sobre .pt2 p {
     font-size: 24px;
 }
+.pt2 a {
+    color: var(--CinzaClaro);
+    text-decoration: dashed;
+}
 
 .mini-game {
 
