@@ -143,11 +143,10 @@ header nav {
 }
 .pt1 button {
     height: 50px;
-    width: 20%;
+    width: 25%;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 30px;
-    margin-left: 40%;
+    margin: 20px 0 20px 40%;
     background-color: var(--AmareloPinguim);
     border-style: none;
     border-radius: 10px;
