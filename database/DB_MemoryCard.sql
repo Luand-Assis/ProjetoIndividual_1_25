@@ -29,7 +29,7 @@ idUsuario int,
 		foreign key (idUsuario) references TB_Usuarios(idUsuario),
     constraint pkEstatisticaUsuario
 		primary key (idEstatistica, idUsuario),
-media_tempo int,
-media_erros int,
-qtd_partidas int
+media_tempo int not null,
+media_erros int not null,
+qtd_partidas int not null
 );
