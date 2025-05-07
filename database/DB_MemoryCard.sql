@@ -6,7 +6,7 @@ idUsuario int primary key auto_increment,
 nickname varchar(12) not null unique,
 corPinguim tinyint not null,
 email varchar(45) not null unique,
--- (criar cronstraint check?)
+	constraint chkEmail check(email like '%@%'),
 senha varchar(45) not null
 );
 
