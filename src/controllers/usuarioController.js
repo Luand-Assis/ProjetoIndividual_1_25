@@ -56,7 +56,6 @@ function cadastrar(req, res) {
     var nickname = req.body.nicknameServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var senhaConfirmar = req.body.senhaConfirmarServer;
 
     // Faça as validações dos valores
     if (nickname == undefined) {
@@ -65,12 +64,10 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
-    } else if (senhaConfirmar) {
-        res.status(400).send("Sua confirmação de senha não é correspondente!")
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nickname, email, senha, senhaConfirmar)
+        usuarioModel.cadastrar(nickname, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);

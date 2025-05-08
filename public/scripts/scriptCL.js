@@ -144,7 +144,6 @@ function cadastrar() {
         var nicknameVar = username;
         var emailVar = email;
         var senhaVar = passwd;
-        var senhaConfirmarVar = passwdConfirm;
         
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -154,8 +153,7 @@ function cadastrar() {
             body: JSON.stringify({
                 nicknameServer: nicknameVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar,
-                senhaConfirmarServer: senhaConfirmarVar
+                senhaServer: senhaVar
             }),
         })
         .then(function (resposta) {
