@@ -4,11 +4,12 @@ use DB_MemoryCard;
 create table TB_Usuarios (
 idUsuario int primary key auto_increment,
 nickname varchar(12) not null unique,
-corPinguim tinyint,
+corPinguim tinyint not null,
 email varchar(45) not null unique,
 	constraint chkEmail check(email like '%@%'),
 senha varchar(45) not null
 );
+select * from TB_Usuarios;
 
 create table TB_Partidas (
 idPartida int auto_increment,
