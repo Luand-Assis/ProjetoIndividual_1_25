@@ -53,24 +53,24 @@ function autenticar(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
+    var nickname = req.body.nicknameServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var fkEmpresa = req.body.idEmpresaVincularServer;
+    var senhaConfirmar = req.body.senhaConfirmarServer;
 
     // Faça as validações dos valores
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
+    if (nickname == undefined) {
+        res.status(400).send("Seu nickname está indefinido!!");
     } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
+        res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    } else if (fkEmpresa == undefined) {
-        res.status(400).send("Sua empresa a vincular está undefined!");
+        res.status(400).send("Sua senha está indefinida!");
+    } else if (senhaConfirmar) {
+        res.status(400).send("Sua confirmação de senha não é correspondente!")
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, fkEmpresa)
+        usuarioModel.cadastrar(nickname, email, senha, senhaConfirmar)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -79,7 +79,7 @@ function cadastrar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao criar o pinguim! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);

@@ -9,6 +9,8 @@ email varchar(45) not null unique,
 	constraint chkEmail check(email like '%@%'),
 senha varchar(45) not null
 );
+-- insert into TB_Usuarios values
+-- 	(default, '${nickname}', '${corPinguim}', '${email}', '${senha}');
 
 create table TB_Partidas (
 idPartida int auto_increment,
