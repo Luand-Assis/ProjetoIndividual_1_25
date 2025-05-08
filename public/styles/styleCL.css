@@ -26,7 +26,7 @@ body {
     /* border: 2px solid black; */
     width: 130px;
     height: 40px;
-    background-image: url(../logo/johndeere-memoria-01-logo.png);
+    background-image: url(../assets/logo/johndeere-memoria-01-logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -84,7 +84,7 @@ body {
     align-items: center;
     width: 99.8%;
     height: 90vh;
-    background-image: url(../giphys/snow-16036.gif);
+    background-image: url(../assets/giphys/snow-16036.gif);
 }
 .card {
     border: 1px solid black;
@@ -189,7 +189,7 @@ body {
     border-radius: 15px;
     align-self: center;
     background-color: var(--BrancoNeve);
-    background-image: url(../ColorPenguin/pinguim_1.png);
+    background-image: url(../assets/ColorPenguin/pinguim_1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

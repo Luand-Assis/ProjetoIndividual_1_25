@@ -102,27 +102,27 @@ var mensagemPasswdVerify = '';
 
 // ----- DEFININDO AS CORES DOS PINGUINS -----
 function pinguimAzul() {
-    document.getElementById("div_pinguimCor").style.backgroundImage = "url('../ColorPenguin/pinguim_1.png')";
+    div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_1.png')";
 }
 
 function pinguimPreto() {
-    document.getElementById("div_pinguimCor").style.backgroundImage = "url('../ColorPenguin/pinguim_2.png')";
+    div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_2.png')";
 }
 
 function pinguimAmarelo() {
-    document.getElementById("div_pinguimCor").style.backgroundImage = "url('../ColorPenguin/pinguim_3.png')";
+    div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_3.png')";
 }
 
 function pinguimLaranja() {
-    document.getElementById("div_pinguimCor").style.backgroundImage = "url('../ColorPenguin/pinguim_4.png')";
+    div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_4.png')";
 }
 
 function pinguimVerde() {
-    document.getElementById("div_pinguimCor").style.backgroundImage = "url('../ColorPenguin/pinguim_5.png')";
+    div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_5.png')";
 }
 
 function pinguimVermelho() {
-    document.getElementById("div_pinguimCor").style.backgroundImage = "url('../ColorPenguin/pinguim_6.png')";
+    div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_6.png')";
 }
 
 // ----- CADASTRAR -----
