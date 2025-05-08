@@ -1,8 +1,9 @@
 // ----- ARMAZANDO VALORES CADASTRO/LOGIN -----
-var nicknameVar = "";
-var emailVar = "";
-var senhaVar = "";
-var senhaConfirmarVar = "";
+var username = 0;
+var email = 0;
+var telefone = 0;
+var passwd = 0;
+var passwdConfirm = 0;
 
 var validacao_1 = false;
 var validacao_2 = false;
@@ -22,7 +23,7 @@ function paginaIndex() {
 
 // ----- VERIFICAÇÃO DO USERNAME -----
 function verifyUsername() {
-senhaVar = inputUsername.value;
+username = inputUsername.value;
 var mensagemUsername = '';
 
     if (username.length < 4 || username.length > 12) {
@@ -37,7 +38,7 @@ var mensagemUsername = '';
 
 // ----- VERIFICAÇÃO DE EMAIL -----
 function verifyEmail() {
-emailVar = inputEmail.value;
+email = inputEmail.value;
 var mensagemEmail = '';
 
     if (email.includes('@')) {
@@ -52,7 +53,7 @@ var mensagemEmail = '';
 
 // ----- VERIFICAÇÃO DE SENHA -----
 function securityPasswd() {
-senhaVar = inputPassword.value;
+passwd = inputPassword.value;
 var mensagemPasswd = '';
 
     if (passwd.length < 8) {
@@ -87,7 +88,7 @@ var mensagemPasswd = '';
 
 
 function verifyPasswd() {
-senhaConfirmarVar = inputPasswordConfirm.value;
+passwdConfirm = inputPasswordConfirm.value;
 var mensagemPasswdVerify = '';
 
     if (passwdConfirm != passwd) {
@@ -133,49 +134,10 @@ function cadastrar() {
         validacao_3 == true &&
         validacao_4 == true
     ) {
-        
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              // crie um atributo que recebe o valor recuperado aqui
-              // Agora vá para o arquivo routes/usuario.js
-              nicknameServer: nicknameVar,
-              emailServer: emailVar,
-              senhaServer: senhaVar
-            }),
-          }).then(function (resposta) {
-            console.log("resposta: ", resposta);
-    
-            if (resposta.ok) {
-              cardErro.style.display = "block";
-    
-              divMensagemErro.innerHTML =
-                `Erro ao criar novo pinguim! <br>Tente novamente.`;
-    
-              setTimeout(() => {
-                window.location = "login.html";
-              }, "2000");
-    
-              limparFormulario();
-              finalizarAguardar(); 
-            } else {
-                throw "Houve um erro ao tentar realizar o cadastro!";
-              }
-            })
-            .catch(function (resposta) {
-              console.log(`#ERRO: ${resposta}`);
-              finalizarAguardar();
-            });
-
-        // alert('Novo pinguim cadastrado com sucesso!')
-        // window.location = 'login.html';
-        return false;
+        alert('Novo pinguim cadastrado com sucesso!')
+        window.location = 'login.html';
+    } else {
+        divErro.innerHTML = `<div id="divMensagemErro">Erro ao criar novo pinguim! <br>Tente novamente.</div> `;
+        // divMensagemErro.innerHTML = `Erro ao criar novo pinguim! <br>Tente novamente.`;
     }
-    // } else {
-    //     divErro.innerHTML = `<div id="divMensagemErro">Erro ao criar novo pinguim! <br>Tente novamente.</div> `;
-    //     // divMensagemErro.innerHTML = `Erro ao criar novo pinguim! <br>Tente novamente.`;
-    // }
 }
