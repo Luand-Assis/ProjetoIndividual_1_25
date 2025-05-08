@@ -1,9 +1,8 @@
 // ----- ARMAZANDO VALORES CADASTRO/LOGIN -----
-var username = 0;
-var email = 0;
-var telefone = 0;
-var passwd = 0;
-var passwdConfirm = 0;
+var username = "";
+var email = "";
+var passwd = "";
+var passwdConfirm = "";
 
 var validacao_1 = false;
 var validacao_2 = false;
@@ -128,16 +127,60 @@ function pinguimVermelho() {
 
 // ----- CADASTRAR -----
 function cadastrar() {
+
+    // Verificando se alguem campo não está validado
     if (
-        validacao_1 == true &&
-        validacao_2 == true &&
-        validacao_3 == true &&
-        validacao_4 == true
+        validacao_1 == false ||
+        validacao_2 == false ||
+        validacao_3 == false ||
+        validacao_4 == false
     ) {
-        alert('Novo pinguim cadastrado com sucesso!')
-        window.location = 'login.html';
-    } else {
         divErro.innerHTML = `<div id="divMensagemErro">Erro ao criar novo pinguim! <br>Tente novamente.</div> `;
-        // divMensagemErro.innerHTML = `Erro ao criar novo pinguim! <br>Tente novamente.`;
-    }
+
+        return false;
+    } else {
+        divErro.innerHTML = '';
+
+        var nicknameVar = username;
+        var emailVar = email;
+        var senhaVar = passwd;
+        var senhaConfirmarVar = passwdConfirm;
+        
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nicknameServer: nicknameVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                senhaConfirmarServer: senhaConfirmarVar
+            }),
+        })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+    
+            if (resposta.ok) {
+              alert('Novo pinguim cadastrado com sucesso!')
+              console.log('enviado para o backend')
+              
+              setTimeout(() => {
+                window.location = "login.html";
+              }, "2000");
+    
+              limparFormulario();
+              finalizarAguardar();
+            } else {
+              throw "Erro ao criar seu pinguim!";
+            }
+          })
+          .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+          });
+    
+        return false;
+      }
+        // window.location = 'login.html';
 }
