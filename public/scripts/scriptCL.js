@@ -100,34 +100,42 @@ var mensagemPasswdVerify = '';
     divVerifyPasswd.innerHTML = mensagemPasswdVerify;
 };
 
+// ----- VAR PARA ARMAZENAR A COR DO PINGUIM SELECIONADO -----
+var cor = 1
+
 // ----- DEFININDO AS CORES DOS PINGUINS -----
 function pinguimAzul() {
     div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_1.png')";
+    cor = 1
 }
 
 function pinguimPreto() {
     div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_2.png')";
+    cor = 2;
 }
 
 function pinguimAmarelo() {
     div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_3.png')";
+    cor = 3;
 }
 
 function pinguimLaranja() {
     div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_4.png')";
+    cor = 4;
 }
 
 function pinguimVerde() {
     div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_5.png')";
+    cor = 5;
 }
 
 function pinguimVermelho() {
     div_pinguimCor.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_6.png')";
+    cor = 6;
 }
 
 // ----- CADASTRAR -----
 function cadastrar() {
-
     // Verificando se alguem campo não está validado
     if (
         validacao_1 == false ||
@@ -136,8 +144,6 @@ function cadastrar() {
         validacao_4 == false
     ) {
         divErro.innerHTML = `<div id="divMensagemErro">Erro ao criar novo pinguim! <br>Tente novamente.</div> `;
-
-        return false;
     } else {
         divErro.innerHTML = '';
 
