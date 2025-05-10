@@ -1,0 +1,207 @@
+/* ----- CFG GLOBAL ----- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    background: linear-gradient(to bottom, var(--AzulEscuro), var(--AzulCéu), var(--AzulGelo));
+}
+:root {
+    --AzulCéu: #0092D8;
+    --AzulGelo: #00C0F3;
+    --BrancoNeve: #ebebeb;
+    --AmareloPinguim: #FFEC00;
+    --CinzaClaro: #C7D6DF;
+    --AzulEscuro: #005B9E;
+}
+/* ----- HEADER ----- */
+.cabecalho {
+    display: flex;
+    background-color: var(--AzulEscuro);
+    padding: 20px;
+    box-shadow: 0px 0px 10px black;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid white;
+    width: 100%;
+}
+.container .div1 {
+    border: 2px solid black;
+    height: 45px;
+    width: 50%;
+}
+.container .div2 {
+    display: flex;
+    justify-content: flex-end;
+    border: 2px solid black;
+    height: 45px;
+    width: 50%;
+}
+#Logout {
+    background-color: rgb(175, 21, 21);
+    width: 80px;
+    font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+#Logout:hover {
+    background-color: rgb(212, 66, 66);
+    transition: 0.3s;
+}
+#logo {
+    border: 2px solid gray;
+    background-image: url(../assets/logo/johndeere-memoria-01-logo.png);
+    height: 40px;
+    width: 120px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* ----- SCREEN ----- */
+.conteudo {
+    border: 2px solid brown;
+    padding: 40px;
+    height: 450px;
+}
+/* ----- CARD PERFIL ----- */
+.perfil {
+    border: 1px solid black;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--CinzaClaro);
+    width: 100%;
+    height: 350px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+.info {
+    display: flex;
+    flex: row;
+}
+#imagemPinguim {
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 80px;
+    background-image: url(../assets/ColorPenguin/pinguim_1.png);
+    background-size: cover;
+    background-position: 0 10px;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    height: 150px;
+    width: 150px;
+    margin: 40px 0 0 40px;
+}
+.divisor {
+    border: 1px solid black;
+    height: 150px;
+    margin: 40px 0 0 40px;
+}
+.nomePinguim {
+    border: 2px solid black;
+    height: 150px;
+    margin: 40px 0 0 40px;
+    width: 35%
+}
+.nomePinguim h3 {
+    color: var(--AmareloPinguim);
+    font-size: 40px;
+    font-weight: 100;
+    margin: 10px 0 0 0;
+    text-shadow: 0 0 5px black;
+}
+.nomePinguim p {
+    font-size: 25px;
+    margin: 0 0 0 20px;
+}
+.emailPinguim {
+    border: 2px solid black;
+    height: 150px;
+    margin: 40px 0 0 40px;
+    width: 35%;
+}
+.emailPinguim h3 {
+     color: var(--AmareloPinguim);
+    font-size: 40px;
+    font-weight: 100;
+    margin: 10px 0 0 0;
+    text-shadow: 0 0 5px black;
+}
+.emailPinguim p {
+    font-size: 25px;
+    margin: 0 0 0 20px;
+}
+.botoes {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    width: 92%;
+    height: 70px;
+}
+.botaoJogar {
+    border: 2px solid yellow;
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+#jogar {
+    background-color: var(--AmareloPinguim);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 5px black;
+    width: 25%;
+    height: 50px;
+}
+#jogar:hover {
+    background-color: #d3c82b;
+    transition: 0.3s;
+}
+.botaoDash {
+     border: 2px solid rgb(0, 204, 255);
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+#dashboard {
+    background-color: var(--AmareloPinguim);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 5px black;
+    width: 25%;
+    height: 50px;
+}
+#dashboard:hover {
+    background-color: #d3c82b;
+    transition: 0.3s;
+}
+/* ----- FOOTER ----- */
+footer {
+    border: 1px solid black;
+    display: flex;
+    background-color: var(--AzulCéu);
+    padding: 40px;
+    box-shadow: 0px 0px 10px black;
+}
+.footer-container {
+    /* border: 2px solid black; */
+    justify-content: center;
+    width: 100%;
+}
+.footer-container p {
+    /* border: 2px solid pink; */
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
