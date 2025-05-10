@@ -165,7 +165,7 @@ function cadastrar() {
               
               setTimeout(() => {
                 window.location = "login.html";
-              }, "2000");
+              }, "1000");
     
               limparFormulario();
               finalizarAguardar();
@@ -181,4 +181,73 @@ function cadastrar() {
         return false;
       }
         // window.location = 'login.html';
+}
+
+function entrar() {
+        var nicknameVar = inputUsername.value;
+        var emailVar = inputEmail.value;
+        var senhaVar = inputPassword.value;
+
+        if (
+            nicknameVar == "" ||
+            emailVar == "" ||
+            senhaVar == ""
+        ) {
+            divErroLogin.innerHTML = `<div class="Erro"><h4><u>Erro</u></h4>
+                    <p>Seu login de pinguim está incorreto</p></div>`;
+            return false;
+        }
+
+        console.log("FORM NICKNAME: ", nicknameVar)
+        console.log("FORM EMAIL: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nicknameServer: nicknameVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.NICKNAME_USUARIO = json.nickname;
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.ID_USUARIO = json.id;
+                    // sessionStoragebuscarPinguimS = JSON.stringify(jsonbuscarPinguims)
+
+                    alert('Login efetuado com sucesso!')
+                    setTimeout(function () {
+                        window.location = "./menu.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                divErroLogin.innerHTML = `<div class="Erro"><h4><u>Erro</u></h4>
+                    <p>Seu login de pinguim está incorreto</p></div>`;
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
 }

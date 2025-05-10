@@ -247,6 +247,31 @@ body {
     height: 30px;
     border-radius: 5px;
 }
+.Erro {
+    border: 1px solid salmon;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    background-color: rgba(245, 188, 182, 0.74);
+    border-radius: 20px;
+    width: 70%;
+    height: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* align-self: center; */
+    margin-top: 10px;
+    margin-bottom: -20px;
+    font-size: 18px;
+}
+.Erro h4 {
+    display: flex;
+    font-weight: 100;
+    margin: 0;
+}
+.Erro p {
+    margin: 0;
+}
 /* ----- FINALIZANDO O CARD <a> + <button> ----- */
 .card a {
     /* border: 2px solid pink; */
