@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/stylePerfil.css">
+    <script src="./scripts/scriptPerfil.js"></script>
     <title>Perfil</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
             <div id="logo"> </div>
         </div>
         <div class="div2">
-            <button id="Logout">Sair</button>
+            <button id="Logout" onclick="sair()">Sair</button>
         </div>
         </div>
     </header>
@@ -36,13 +37,14 @@
             <br>
             <p>luan.assis@sptech.school</p>
         </div>
-        </div>
+    </div>
+    <div id="divisor2"></div>
         <div class="botoes">
             <div class="botaoJogar">
-                <button id="jogar">Jogar</button>
+                <button id="jogar" onclick="play()">Jogar</button>
             </div>
             <div class="botaoDash">
-                <button id="dashboard">Estatisticas</button>
+                <button id="dashboard" onclick="dashboard()">Estatisticas</button>
             </div>
         </div>
     </div>
