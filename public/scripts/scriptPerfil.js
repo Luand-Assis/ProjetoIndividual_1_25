@@ -7,4 +7,8 @@ function play() {
 function dashboard() {
   alert('Em breve.')
 }
-    
+
+window.onload = () => {
+    nickname.innerHTML = sessionStorage.NICKNAME_USUARIO;
+    email.innerHTML = sessionStorage.EMAIL_USUARIO;
+}
