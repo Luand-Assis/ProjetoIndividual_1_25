@@ -17,56 +17,56 @@
 
     <div class="fila1">
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
     </div>
     <div class="fila2">
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
     </div>
     <div class="fila3">
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
         <div class="carta">
-            <div class="lado frente"></div>
-            <div class="lado atras"></div>
+            <div class="frente"></div>
+            <div class="atras"></div>
         </div>
     </div>
 
@@ -76,14 +76,14 @@
 </html>
 
 <script>
-    var lista_cartas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    var lista_cartas = [1, 2, 3, 4, 5, 6];
     var cartas = lista_cartas.concat(lista_cartas); // .concat vai concatenar a lista com ela mesmo, duplicando-a.
-    
+
+    // ----- EMBARALHANDO AS CARTAS -----
     for (var i = cartas.length - 1; i >= 0; i--) {
         var e = Math.floor(Math.random() * (i + 1)); // e = embaralhador
         var cartaTrocada = cartas[i]; // aqui armazena a carta com indice i - i = 9 = cartas[9] = 10
         cartas[i] = cartas[e]; // troca o valor da carta que valia 10 para outra aleatória
         cartas[e] = cartaTrocada // carta que foi dada o valor recebe o valor da carta antiga
-
     }
 </script>
