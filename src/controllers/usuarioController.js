@@ -24,8 +24,9 @@ function autenticar(req, res) {
 
                                 if (resultadoAutenticar.length > 0) {
                                     res.json({
-                                        id: resultadoAutenticar[0].id,
+                                        idUsuario: resultadoAutenticar[0].idUsuario,
                                         nickname: resultadoAutenticar[0].nickname,
+                                        corPinguim: resultadoAutenticar[0].corPinguim,
                                         email: resultadoAutenticar[0].email,
                                         senha: resultadoAutenticar[0].senha,
                                         resultados: resultadoAutenticar
@@ -54,6 +55,7 @@ function autenticar(req, res) {
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nickname = req.body.nicknameServer;
+    var corPinguim = req.body.corServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
@@ -67,7 +69,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nickname, email, senha)
+        usuarioModel.cadastrar(nickname, corPinguim, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);

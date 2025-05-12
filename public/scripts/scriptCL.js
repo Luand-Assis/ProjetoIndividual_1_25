@@ -148,6 +148,7 @@ function cadastrar() {
         divErro.innerHTML = '';
 
         var nicknameVar = username;
+        var corVar = cor;
         var emailVar = email;
         var senhaVar = passwd;
         
@@ -158,6 +159,7 @@ function cadastrar() {
             },
             body: JSON.stringify({
                 nicknameServer: nicknameVar,
+                corServer: corVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             }),
@@ -204,7 +206,7 @@ function entrar() {
             return false;
         }
 
-        console.log("FORM NICKNAME: ", nicknameVar)
+        console.log("FORM NICKNAME: ", nicknameVar);
         console.log("FORM EMAIL: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
@@ -228,9 +230,10 @@ function entrar() {
                     console.log(json);
                     console.log(JSON.stringify(json));
                     sessionStorage.NICKNAME_USUARIO = json.nickname;
+                    sessionStorage.COR_USUARIO = json.corPinguim;
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.ID_USUARIO = json.id;
-                    // sessionStoragebuscarPinguimS = JSON.stringify(jsonbuscarPinguims)
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     alert('Login efetuado com sucesso!')
                     setTimeout(function () {
@@ -244,11 +247,6 @@ function entrar() {
                     <p>Seu login de pinguim está incorreto</p></div>`;
 
                 console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
             }
 
         }).catch(function (erro) {
