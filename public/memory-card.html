@@ -20,7 +20,7 @@
             <div class="frente" id="frente0"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta1">
+        <div class="carta" id="carta1" onclick="virar(this)">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
@@ -99,8 +99,8 @@
     var contador = 0;
 
     function virar(CartaSelecionada) {
-        document.getElementsByClassName('atras').style.display = 'none'
-        document.getElementsByClassName('frente').style.display = 'block'
+        CartaSelecionada.querySelector('.atras').style.display = 'none'
+        CartaSelecionada.querySelector('.frente').style.display = 'block'
     }
 
 </script>
