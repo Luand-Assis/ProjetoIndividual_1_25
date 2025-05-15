@@ -16,55 +16,55 @@
     <div class="mcd">
 
     <div class="fila1">
-        <div class="carta">
+        <div class="carta" id="carta0" onclick="virar(this)">
+            <div class="frente" id="frente0"></div>
+            <div class="atras"></div>
+        </div>
+        <div class="carta" id="carta1">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
+        <div class="carta" id="carta2">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
-            <div class="frente"></div>
-            <div class="atras"></div>
-        </div>
-        <div class="carta">
+        <div class="carta" id="carta3">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
     </div>
     <div class="fila2">
-        <div class="carta">
+        <div class="carta" id="carta4">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
+        <div class="carta" id="carta5">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
+        <div class="carta" id="carta6">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
+        <div class="carta" id="carta7">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
     </div>
     <div class="fila3">
-        <div class="carta">
+        <div class="carta" id="carta8">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
+        <div class="carta" id="carta9">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
+        <div class="carta" id="carta10">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
-        <div class="carta">
+        <div class="carta" id="carta11">
             <div class="frente"></div>
             <div class="atras"></div>
         </div>
@@ -80,10 +80,27 @@
     var cartas = lista_cartas.concat(lista_cartas); // .concat vai concatenar a lista com ela mesmo, duplicando-a.
 
     // ----- EMBARALHANDO AS CARTAS -----
-    for (var i = cartas.length - 1; i >= 0; i--) {
-        var e = Math.floor(Math.random() * (i + 1)); // e = embaralhador
-        var cartaTrocada = cartas[i]; // aqui armazena a carta com indice i - i = 9 = cartas[9] = 10
-        cartas[i] = cartas[e]; // troca o valor da carta que valia 10 para outra aleatória
-        cartas[e] = cartaTrocada // carta que foi dada o valor recebe o valor da carta antiga
+    for (var i = cartas.length -1; i >= 0; i--) { // Arrays vão até o indice 11
+        var e = Math.floor(Math.random() * (i+1)); // e = embaralhador | Sorteia um numero de 1-11
+        var cartaTrocada = cartas[i]; // aqui armazena a carta que vai ser alterada a posição | Ex: 11
+        cartas[i] = cartas[e]; // troca o valor da carta Ex: 11 pela carta que foi sorteada
+        cartas[e] = cartaTrocada // carta que foi sorteada inverte o valor com a carta que tomou seu indice
     }
+
+    for (var i = 0; i < cartas.length; i++) { // percorre todos os indices de cartas (11)
+        var cartaID = document.getElementById('carta'+i) // pega todos os IDs de cada carta
+        cartaID.setAttribute('value', cartas[i]) // adiciona o atributo "valor" em order com as cartas ja embaralhadas
+        console.log(cartaID) // mostra no console
+    }
+    var elementos = document.getElementsByClassName('carta');
+    console.log(elementos)
+
+    // ----- CONTADOR DE CARTAS VIRADAS -----
+    var contador = 0;
+
+    function virar(CartaSelecionada) {
+        document.getElementsByClassName('atras').style.display = 'none'
+        document.getElementsByClassName('frente').style.display = 'block'
+    }
+
 </script>
