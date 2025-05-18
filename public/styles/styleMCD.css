@@ -26,21 +26,52 @@ header {
 }
 
 /* ----- MEMORY CARD GAME ----- */
-/* .mcd {
-    border: 1px solid var(--AmareloPinguim);
-    display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
-    gap: 10px;
-    justify-self: center;
-    align-self: center;
-    background-color: var(--CinzaClaro);
+#posicao {
+    /* border: 1px solid black; */
     width: 100%;
-    max-width: 1080px;
-    height: 700px;
-} */
-
+}
+.end-game {
+    border: 2px solid var(--AmareloPinguim);
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    justify-content: space-between;
+    width: 20%;
+    height: 120px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: var(--CinzaClaro);
+}
+.end-game .puffle {
+    /* border: 1px solid black; */
+    background-image: url(../assets/logo/puffle_dourado.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50%;
+    height: 100%;
+}
+.end-game .texto {
+    font-size: 17px;
+}
+#botao {
+    display: block;
+    justify-self: center;
+    margin-bottom: 10px;
+    background-color: var(--AmareloPinguim);
+    height: 40px;
+    width: 90px;
+    border-style: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+#botao:hover {
+    background-color: #d3c82b;
+}
 .mcd {
-    border: 1px solid var(--AmareloPinguim);
+    border: 3px solid var(--AmareloPinguim);
     border-radius: 10px;
     height: 450px;
     max-width: 800px;
@@ -82,12 +113,14 @@ header {
     border-radius: 10px;
     height: 120px;
     width: 100px;
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
-.frente #frente0 {
-    background-image: url(../assets/cards/card_1.jpg);
+.frente img {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
 }
 .atras {
     display: block;

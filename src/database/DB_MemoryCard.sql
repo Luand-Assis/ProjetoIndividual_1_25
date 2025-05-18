@@ -19,8 +19,7 @@ idUsuario int,
     constraint pkPartidaUsuario
 		primary key (idPartida, idUsuario),
 qtd_erros int,
-tempo_inicio datetime default current_timestamp not null,
-tempo_final datetime
+tempo_segundos int
 );
 
 create table TB_Estatisticas (

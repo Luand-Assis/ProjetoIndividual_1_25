@@ -12,71 +12,75 @@
     <header>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam iure blanditiis inventore distinctio sint, minus et tempora minima. Reprehenderit quasi perferendis amet quis quos earum esse! Nobis quisquam minus adipisci.
     </header>
+    
+    <div id="posicao"></div>
+
+    <button id="botao" onclick="start()">INICIAR</button>
 
     <div class="mcd">
 
     <div class="fila1">
         <div class="carta" id="carta0" onclick="virar(this)">
-            <div class="frente" id="frente0"></div>
+            <div class="frente" id="frente0"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
         <div class="carta" id="carta1" onclick="virar(this)">
-            <div class="frente"></div>
+            <div class="frente" id="frente1"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta2">
-            <div class="frente"></div>
+        <div class="carta" id="carta2" onclick="virar(this)">
+            <div class="frente" id="frente2"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta3">
-            <div class="frente"></div>
+        <div class="carta" id="carta3" onclick="virar(this)">
+            <div class="frente" id="frente3"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
     </div>
     <div class="fila2">
-        <div class="carta" id="carta4">
-            <div class="frente"></div>
+        <div class="carta" id="carta4" onclick="virar(this)">
+            <div class="frente" id="frente4"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta5">
-            <div class="frente"></div>
+        <div class="carta" id="carta5" onclick="virar(this)">
+            <div class="frente" id="frente5"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta6">
-            <div class="frente"></div>
+        <div class="carta" id="carta6" onclick="virar(this)">
+            <div class="frente" id="frente6"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta7">
-            <div class="frente"></div>
+        <div class="carta" id="carta7" onclick="virar(this)">
+            <div class="frente" id="frente7"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
     </div>
     <div class="fila3">
-        <div class="carta" id="carta8">
-            <div class="frente"></div>
+        <div class="carta" id="carta8" onclick="virar(this)">
+            <div class="frente" id="frente8"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta9">
-            <div class="frente"></div>
+        <div class="carta" id="carta9" onclick="virar(this)">
+            <div class="frente" id="frente9"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta10">
-            <div class="frente"></div>
+        <div class="carta" id="carta10" onclick="virar(this)">
+            <div class="frente" id="frente10"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
-        <div class="carta" id="carta11">
-            <div class="frente"></div>
+        <div class="carta" id="carta11" onclick="virar(this)">
+            <div class="frente" id="frente11"><img src="" alt=""></div>
             <div class="atras"></div>
         </div>
     </div>
-
     </div>
 
 </body>
 </html>
 
 <script>
-    var lista_cartas = [1, 2, 3, 4, 5, 6];
+    // ----- LISTA DAS CARTAS -----
+    var lista_cartas = ['./assets/cards/card_1.jpg', './assets/cards/card_2.jpg', './assets/cards/card_3.jpg', './assets/cards/card_4.jpg', './assets/cards/card_5.jpg', './assets/cards/card_6.jpg'];
     var cartas = lista_cartas.concat(lista_cartas); // .concat vai concatenar a lista com ela mesmo, duplicando-a.
 
     // ----- EMBARALHANDO AS CARTAS -----
@@ -87,20 +91,128 @@
         cartas[e] = cartaTrocada // carta que foi sorteada inverte o valor com a carta que tomou seu indice
     }
 
+    // ----- SELECIONANDO AS CARTAS -----
     for (var i = 0; i < cartas.length; i++) { // percorre todos os indices de cartas (11)
-        var cartaID = document.getElementById('carta'+i) // pega todos os IDs de cada carta
-        cartaID.setAttribute('value', cartas[i]) // adiciona o atributo "valor" em order com as cartas ja embaralhadas
-        console.log(cartaID) // mostra no console
+        var frenteID = document.getElementById('frente'+i) // pega o id da carta (frente) atual
+        var frente = frenteID.querySelector('img'); // seleciona a tag 'img' da carta (frente) atual
+        frente.setAttribute('src', cartas[i])  // adiciona o caminho da carta no atributo src
     }
-    var elementos = document.getElementsByClassName('carta');
-    console.log(elementos)
 
     // ----- CONTADOR DE CARTAS VIRADAS -----
     var contador = 0;
 
+    // ----- CONTADOR DE ERROS -----
+    var erros = 0;
+
+    // ----- CRONOMETRO -----
+    var cronometro;
+    var tempo = 0;
+
+    function start() {
+        var botao = document.getElementById('botao'); // pega o botao
+        botao.style.display = 'none'; // some com o botao
+        var todas_cartas = document.querySelectorAll('.carta'); // pega todas as div carta
+        for (var i = 0; i < cartas.length; i++) {
+            todas_cartas[i].querySelector('.frente').style.display = 'block' // exibe todas elas
+            todas_cartas[i].querySelector('.atras').style.display = 'none'
+        } 
+
+        setTimeout(() => {
+        for (var i = 0; i < cartas.length; i++) {
+            todas_cartas[i].querySelector('.frente').style.display = 'none' // esconde todas elas depos de 2 segundos
+            todas_cartas[i].querySelector('.atras').style.display = 'block'
+        }
+
+        cronometro = setInterval(() => { // inicia o cronometro
+            tempo++;
+        }, 1000)
+
+        }, 2000)
+    }
+
+
+
+    // ----- ARMAZENANDO AS CARTAS CLICADAS -----
+    var primeiraCartaImg = undefined;
+    var primeiraCartaDiv = undefined;
+    var segundaCartaImg = undefined;
+    var segundaCartaDiv = undefined;
+
+    // ----- VARIAVEL DE CONTROLE DAS CARTAS -----
+    var bloquear = false;
+
     function virar(CartaSelecionada) {
-        CartaSelecionada.querySelector('.atras').style.display = 'none'
-        CartaSelecionada.querySelector('.frente').style.display = 'block'
+        clearInterval;
+
+        if (bloquear == false) {
+
+        CartaSelecionada.querySelector('.atras').style.display = 'none';
+        CartaSelecionada.querySelector('.frente').style.display = 'block';
+        contador ++; // cada carta clicada o contador computa +1
+
+        if (contador == 1) {
+            primeiraCartaImg = CartaSelecionada.querySelector('.frente img').getAttribute('src');
+            primeiraCartaDiv = CartaSelecionada;
+            console.log(primeiraCartaImg);
+            console.log(primeiraCartaDiv);
+
+        } else if (contador == 2) { // quando contador = 2 ele compara o ATRIBUTO das cartas
+            segundaCartaImg = CartaSelecionada.querySelector('.frente img').getAttribute('src');
+            segundaCartaDiv = CartaSelecionada;
+            console.log(segundaCartaImg);
+            console.log(segundaCartaDiv);
+            bloquear = true; // bloqueia clicar nas cartas
+
+            if (primeiraCartaImg == segundaCartaImg) { // se forem iguais, continuem visíveis
+                primeiraCartaDiv.querySelector('.frente img').style.display = 'block';
+                segundaCartaDiv.querySelector('.frente img').style.display = 'block';
+                primeiraCartaDiv.onclick = null;
+                segundaCartaDiv.onclick = null;
+                contador = 0;
+                bloquear = false // se as cartas forem iguais, ai pode continuar clicando
+
+                 if ( // se todas as divs nao tiverem mais onclick
+                    carta0.onclick == null &&
+                    carta1.onclick == null &&
+                    carta2.onclick == null &&
+                    carta3.onclick == null &&
+                    carta4.onclick == null &&
+                    carta5.onclick == null &&
+                    carta6.onclick == null &&
+                    carta7.onclick == null &&
+                    carta8.onclick == null &&
+                    carta9.onclick == null &&
+                    carta10.onclick == null &&
+                    carta11.onclick == null
+                 ) {
+                    setTimeout(() => {
+                        posicao.innerHTML = `
+                        <div class="end-game">
+                            <div class="puffle"></div>
+                            <div class="texto"><p>Parabéns!<br>Você concluiu o Memory Card Game<br>em ${tempo} segundos com ${erros} erros.</p></div>
+                        </div>`;
+                        clearInterval(cronometro); // para o cronometro
+                    }, 1000)
+                    setTimeout(() => {
+                        window.location = 'menu.html';
+                    }, 8000)
+                }
+
+            } else { // se forem diferentes, escondam denovo em 1 segundo e meio
+                setTimeout(() => {
+                    primeiraCartaDiv.querySelector('.frente').style.display = 'none';
+                    primeiraCartaDiv.querySelector('.atras').style.display = 'block';
+                    segundaCartaDiv.querySelector('.frente').style.display = 'none';
+                    segundaCartaDiv.querySelector('.atras').style.display = 'block';
+                    bloquear = false; // se as cartas forem diferentes, pode clicar nelas novamente em 1 segundo e meio
+                }, 1500);
+
+                erros++;
+                contador = 0;
+
+            }
+        }
+    }
     }
 
 </script>
