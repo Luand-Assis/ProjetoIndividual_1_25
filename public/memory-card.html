@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
         <div class="cabecalho">
         <div class="logo"></div>
         <div class="titulo">Memory Card Game</div>
-        <div class="voltar"><button id="botaoMenu">Menu</button></div>
+        <div class="voltar"><button id="botaoMenu" onclick="menu()">Menu</button></div>
         </div>
     </header>
     
@@ -87,6 +87,10 @@
 </html>
 
 <script>
+    function menu() {
+        window.location = 'menu.html';
+    }
+
     // ----- LISTA DAS CARTAS -----
     var lista_cartas = ['./assets/cards/card_1.jpg', './assets/cards/card_2.jpg', './assets/cards/card_3.jpg', './assets/cards/card_4.jpg', './assets/cards/card_5.jpg', './assets/cards/card_6.jpg'];
     var cartas = lista_cartas.concat(lista_cartas); // .concat vai concatenar a lista com ela mesmo, duplicando-a.
@@ -116,15 +120,16 @@
     var cronometro;
     var tempo = 0;
 
+    // ----- INICIA O JOGO -----
     function start() {
-        var instrucoes = document.getElementById('instrucoes');
-        instrucoes.style.display = 'none';
-        var jogo = document.getElementById('jogo');
-        jogo.style.display = 'block'; 
+        var instrucoes = document.getElementById('instrucoes'); // pega a div instruções
+        instrucoes.style.display = 'none'; // some com a div instruções
+        var jogo = document.getElementById('jogo'); // pega a div jogo
+        jogo.style.display = 'block'; // exibe a div jogo
         var todas_cartas = document.querySelectorAll('.carta'); // pega todas as div carta
         for (var i = 0; i < cartas.length; i++) {
-            todas_cartas[i].querySelector('.frente').style.display = 'block' // exibe todas elas
-            todas_cartas[i].querySelector('.atras').style.display = 'none'
+            todas_cartas[i].querySelector('.frente').style.display = 'block'; // exibe todas elas
+            todas_cartas[i].querySelector('.atras').style.display = 'none';
         } 
 
         setTimeout(() => {
