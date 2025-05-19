@@ -10,14 +10,22 @@
 <body>
 
     <header>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam iure blanditiis inventore distinctio sint, minus et tempora minima. Reprehenderit quasi perferendis amet quis quos earum esse! Nobis quisquam minus adipisci.
+        <div class="cabecalho">
+        <div class="logo"></div>
+        <div class="titulo">Memory Card Game</div>
+        <div class="voltar"><button id="botaoMenu">Menu</button></div>
+        </div>
     </header>
     
     <div id="posicao"></div>
 
-    <button id="botao" onclick="start()">INICIAR</button>
+    
 
-    <div class="mcd">
+    <div class="comecar" id="instrucoes">
+        <button id="botao" onclick="start()">INICIAR</button>
+        <p>Ao clicar no botão "INICIAR", as cartas serão exibidas por 3 segundos para serem memorizadas.<br>Durante o jogo será registrado a quantidade de erros e o tempo para finalizar o jogo.</p>
+    </div>
+    <div class="mcd" id="jogo">
 
     <div class="fila1">
         <div class="carta" id="carta0" onclick="virar(this)">
@@ -109,8 +117,10 @@
     var tempo = 0;
 
     function start() {
-        var botao = document.getElementById('botao'); // pega o botao
-        botao.style.display = 'none'; // some com o botao
+        var instrucoes = document.getElementById('instrucoes');
+        instrucoes.style.display = 'none';
+        var jogo = document.getElementById('jogo');
+        jogo.style.display = 'block'; 
         var todas_cartas = document.querySelectorAll('.carta'); // pega todas as div carta
         for (var i = 0; i < cartas.length; i++) {
             todas_cartas[i].querySelector('.frente').style.display = 'block' // exibe todas elas
@@ -127,7 +137,7 @@
             tempo++;
         }, 1000)
 
-        }, 2000)
+        }, 3000)
     }
 
 
