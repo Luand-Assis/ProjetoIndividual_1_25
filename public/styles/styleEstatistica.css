@@ -90,6 +90,17 @@ header {
     background-color: var(--CinzaClaro);
     padding-bottom: 20px;
 }
+.ranking h3 {
+    font-weight: 100;
+    font-size: 20px;
+    text-shadow: 0 0 10px var(--AmareloPinguim);
+}
 .ranking p {
     margin: 8px;
+}
+.ranking .divisor {
+    border: 1px solid var(--AmareloPinguim);
+    display: flex;
+    justify-self: center;
+    width: 100%;
 }
