@@ -110,7 +110,7 @@ header {
     border: 1px solid black;
     margin-left: 40px;
     width: 70%;
-
+    height: 460px;
 }
 .kpi {
     border: 2px solid var(--AmareloPinguim);
@@ -175,4 +175,9 @@ header {
 #pontuacao {
     margin-top: 20px;
     font-size: 22px;
+}
+.graficosModernos {
+    border: 1px solid pink;
+    display: flex;
+    justify-content: space-between;
 }
