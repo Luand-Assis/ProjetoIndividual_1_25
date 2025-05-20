@@ -1,6 +1,7 @@
 create database DB_MemoryCard;
 use DB_MemoryCard;
 
+
 create table TB_Usuarios (
 idUsuario int primary key auto_increment,
 nickname varchar(12) not null unique,
@@ -20,6 +21,8 @@ idUsuario int,
 qtd_erros int not null,
 tempo_segundos int not null
 );
+select * from TB_Partidas;
+alter table TB_Partidas add column pontuacao int not null;
 
 create table TB_Conquistas (
 idConquista int primary key auto_increment,

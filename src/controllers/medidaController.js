@@ -1,9 +1,10 @@
 var medidaModel = require("../models/medidaModel");
 
 function dadosPartida(req, res) {
+    var idUsuario = req.body.idUsuario
     var erros = req.body.qtd_erros;
     var tempo = req.body.tempo_segundos;
-    var idUsuario = req.body.idUsuario
+    var pontuacao = req.body.pontuacao;
 
     if (idUsuario == undefined) {
         console.log('usuário indefinido!')
@@ -11,8 +12,10 @@ function dadosPartida(req, res) {
         console.log('quantidade de erros indefinida!')
     } else if (tempo == undefined) {
         console.log('tempo indefinido!')
+    } else if (pontuacao == undefined) {
+        console.log('pontuação indefinada!')
     } else {
-        medidaModel.dadosPartida(idUsuario ,erros, tempo)
+        medidaModel.dadosPartida(idUsuario, erros, tempo, pontuacao)
         .then(
                 function (resultado) {
                     res.json(resultado);

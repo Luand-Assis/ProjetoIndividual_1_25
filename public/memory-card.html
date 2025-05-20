@@ -116,6 +116,9 @@
     // ----- CONTADOR DE ERROS -----
     var erros = 0;
 
+    // ----- PONTUAÇÃO -----
+    var pontos = 1000;
+
     // ----- CRONOMETRO -----
     var cronometro;
     var tempo = 0;
@@ -200,11 +203,12 @@
                     carta10.onclick == null &&
                     carta11.onclick == null
                  ) {
+                    pontos = pontos - (tempo * 11) - (erros * 5);
                     setTimeout(() => {
                         posicao.innerHTML = `
                         <div class="end-game">
                             <div class="puffle"></div>
-                            <div class="texto"><p>Parabéns!<br>Você concluiu o Memory Card Game<br>em ${tempo} segundos com ${erros} erros.</p></div>
+                            <div class="texto"><p>Parabéns!<br>Você concluiu o Memory Card Game<br>em ${tempo} segundos com ${erros} erros. Pontuação: ${pontos}.</p></div>
                         </div>`;
                         clearInterval(cronometro); // para o cronometro
                     }, 1000)
@@ -217,6 +221,7 @@
                         body: JSON.stringify({
                             tempo_segundos: tempo,
                             qtd_erros: erros,
+                            pontuacao: pontos,
                             idUsuario: sessionStorage.getItem("ID_USUARIO")
                         }),
                     })

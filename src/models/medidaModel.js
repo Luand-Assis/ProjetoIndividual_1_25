@@ -1,10 +1,10 @@
 var database = require("../database/config");
 
-function dadosPartida(idUsuario, erros, tempo) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario, erros, tempo);
+function dadosPartida(idUsuario, erros, tempo, pontuacao) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario, erros, tempo, pontuacao);
 
     var instrucaoSql = `
-            INSERT INTO TB_Partidas VALUES (default, ${idUsuario}, ${erros}, ${tempo});
+            INSERT INTO TB_Partidas VALUES (default, ${idUsuario}, ${erros}, ${tempo}, ${pontuacao});
         `;
         console.log("Executando a instrução SQL: \n" + instrucaoSql);
         return database.executar(instrucaoSql);
