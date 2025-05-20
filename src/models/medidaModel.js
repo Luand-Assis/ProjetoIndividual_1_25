@@ -1,5 +1,15 @@
 var database = require("../database/config");
 
+function dadosPartida(idUsuario, erros, tempo) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idUsuario, erros, tempo);
+
+    var instrucaoSql = `
+            INSERT INTO TB_Partidas VALUES (default, ${idUsuario}, ${erros}, ${tempo});
+        `;
+        console.log("Executando a instrução SQL: \n" + instrucaoSql);
+        return database.executar(instrucaoSql);
+}
+
 function buscarUltimasMedidas(idAquario, limite_linhas) {
 
     var instrucaoSql = `SELECT 
@@ -30,6 +40,7 @@ function buscarMedidasEmTempoReal(idAquario) {
 }
 
 module.exports = {
+    dadosPartida,
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal
 }

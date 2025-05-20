@@ -208,11 +208,33 @@
                         </div>`;
                         clearInterval(cronometro); // para o cronometro
                     }, 1000)
+
+                    fetch("/medidas/dadosPartida", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            tempo_segundos: tempo,
+                            qtd_erros: erros,
+                            idUsuario: sessionStorage.getItem("ID_USUARIO")
+                        }),
+                    })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+                
+                        if (resposta.ok) {
+                        console.log('enviado para o backend')
+                        }
+                    })
+                    .catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+
                     setTimeout(() => {
                         window.location = 'menu.html';
                     }, 10000)
-                }
-
+                }       
             } else { // se forem diferentes, escondam denovo em 1 segundo e meio
                 setTimeout(() => {
                     primeiraCartaDiv.querySelector('.frente').style.display = 'none';
@@ -228,6 +250,6 @@
             }
         }
     }
-    }
+}
 
 </script>
