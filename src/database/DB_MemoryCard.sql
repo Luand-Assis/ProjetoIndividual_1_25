@@ -21,7 +21,14 @@ idUsuario int,
 qtd_erros int not null,
 tempo_segundos int not null
 );
-select * from TB_Partidas;
+select 
+	nickname, 
+    max(pontuacao) 
+from TB_Usuarios u join TB_Partidas p 
+on u.idUsuario = p.idUsuario 
+group by nickname 
+order by max(pontuacao) desc;
+
 alter table TB_Partidas add column pontuacao int not null;
 
 create table TB_Conquistas (

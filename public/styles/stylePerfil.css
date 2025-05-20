@@ -171,6 +171,9 @@ body {
 #conquista1 {
     border: 1px solid black;
     width: 60px;
+    background-image: url(../assets/achievements/achievement.webp);
+    background-position: center;
+    background-size: 100% 100%;
 }
 #conquista2 {
     border: 1px solid black;
@@ -179,6 +182,49 @@ body {
 #conquista3 {
     border: 1px solid black;
     width: 60px;
+}
+#descricao1 {
+    border: 1px solid var(--AmareloPinguim);
+    display: none;
+    width: 150px;
+    height: 120px;
+    background-color: var(--BrancoNeve);
+    border-radius: 30px;
+    flex-direction: column;
+    position: absolute;
+    bottom: -100px;
+    left: 25px;
+}
+.titulo_achievement {
+    color: var(--AmareloPinguim);
+    text-shadow: 0 0 5px black;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+#descricao2 {
+    border: 1px solid var(--AmareloPinguim);
+    display: none;
+    width: 150px;
+    height: 120px;
+    background-color: var(--BrancoNeve);
+    border-radius: 30px;
+    flex-direction: column;
+    position: absolute;
+    bottom: -100px;
+    left: 90px;
+}
+#descricao3 {
+    border: 1px solid var(--AmareloPinguim);
+    display: none;
+    width: 150px;
+    height: 120px;
+    background-color: var(--BrancoNeve);
+    border-radius: 30px;
+    flex-direction: column;
+    position: absolute;
+    bottom: -100px;
+    left: 160px;
 }
 .botoes {
     /* border: 2px solid black; */

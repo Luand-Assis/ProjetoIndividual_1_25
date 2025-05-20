@@ -26,3 +26,10 @@ window.onload = () => {
         imagemPinguim.style.backgroundImage = "url('./assets/ColorPenguin/pinguim_6.png')"
     }
 }
+
+function exibir(exibirDesc) {
+    exibirDesc.querySelector('.descricao').style.display = 'flex';
+}
+function ocultar(esconder) {
+    esconder.querySelector('.descricao').style.display = 'none '
+}
