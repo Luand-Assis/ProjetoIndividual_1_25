@@ -22,8 +22,8 @@
     
 
     <div class="comecar" id="instrucoes">
+        <p>Ao clicar no botão "INICIAR", as cartas serão exibidas por 3 segundos para serem memorizadas.<br>Durante o jogo será registrado a quantidade de erros, o tempo para finalizar e a pontuação final.</p>
         <button id="botao" onclick="start()">INICIAR</button>
-        <p>Ao clicar no botão "INICIAR", as cartas serão exibidas por 2 segundos para serem memorizadas.<br>Durante o jogo será registrado a quantidade de erros e o tempo para finalizar o jogo.</p>
     </div>
     <div class="mcd" id="jogo">
 
@@ -145,7 +145,7 @@
             tempo++;
         }, 1000)
 
-        }, 2000)
+        }, 3000)
     }
 
 
@@ -203,7 +203,7 @@
                     carta10.onclick == null &&
                     carta11.onclick == null
                  ) {
-                    pontos = pontos - (tempo * 11) - (erros * 5);
+                    pontos = pontos - (tempo * 10) - (erros * 5);
                     setTimeout(() => {
                         posicao.innerHTML = `
                         <div class="end-game">

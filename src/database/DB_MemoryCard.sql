@@ -1,7 +1,7 @@
 create database DB_MemoryCard;
 use DB_MemoryCard;
 
-
+select * from TB_Usuarios;
 create table TB_Usuarios (
 idUsuario int primary key auto_increment,
 nickname varchar(12) not null unique,
