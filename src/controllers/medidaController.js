@@ -24,12 +24,84 @@ function dadosPartida(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve erro ao enviar os dados! ",
+                        "\nHouve erro ao enviar os dados da partida! ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
                 }
             );
+    }
+}
+
+function achievement1(req, res) {
+    var idUsuario = req.body.idUsuario;
+
+    if (idUsuario == undefined) {
+        console.log('idUsuario está indefinido!')
+    } else {
+        medidaModel.achievement1(idUsuario)
+        .then(
+            function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve erro ao enviar os dados da conquista 1! ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+        );
+    }
+}
+
+function achievement2(req, res) {
+    var idUsuario = req.body.idUsuario;
+
+    if (idUsuario == undefined) {
+        console.log('idUsuario está indefinido!')
+    } else {
+        medidaModel.achievement2(idUsuario)
+        .then(
+            function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve erro ao enviar os dados da conquista 2! ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+        );
+    }
+}
+
+function achievement3(req, res) {
+    var idUsuario = req.body.idUsuario;
+
+    if (idUsuario == undefined) {
+        console.log('idUsuario está indefinido!')
+    } else {
+        medidaModel.achievement3(idUsuario)
+        .then(
+            function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve erro ao enviar os dados da conquista 3! ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+        );
     }
 }
 
@@ -76,6 +148,9 @@ function buscarMedidasEmTempoReal(req, res) {
 
 module.exports = {
     dadosPartida,
+    achievement1,
+    achievement2,
+    achievement3,
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal
 

@@ -203,7 +203,50 @@
                     carta10.onclick == null &&
                     carta11.onclick == null
                  ) {
+                    
+
+                    // ----- CONQUISTA 3 | TERMINAR SEM ERROS -----
+                    if (erros == 0) {
+                        fetch("/medidas/achievement2", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            idUsuario: sessionStorage.getItem("ID_USUARIO")
+                        }),
+                    })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+                
+                        if (resposta.ok) {
+                        console.log('enviado para o backend dados da conquista 2')
+                        }
+                    })
+                    }
+
+                    // ----- CONQUISTA 2 | TERMINAR EM MENOS DE 15 SEGUNDOS -----
+                    if (tempo < 15) {
+                        fetch("/medidas/achievement3", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            idUsuario: sessionStorage.getItem("ID_USUARIO")
+                        }),
+                    })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+                
+                        if (resposta.ok) {
+                        console.log('enviado para o backend dados da conquista 3')
+                        }
+                    })
+                    }
+
                     pontos = pontos - (tempo * 10) - (erros * 5);
+
                     setTimeout(() => {
                         posicao.innerHTML = `
                         <div class="end-game">
@@ -213,6 +256,7 @@
                         clearInterval(cronometro); // para o cronometro
                     }, 1000)
 
+                    // ----- ENVIANDO DADOS AO FINALIZAR PARTIDA -----
                     fetch("/medidas/dadosPartida", {
                         method: "POST",
                         headers: {
@@ -236,9 +280,28 @@
                         console.log(`#ERRO: ${resposta}`);
                     });
 
+                    // ----- CONQUISTA 1 | CONCLUÍR O JOGO -----
+                    fetch("/medidas/achievement1", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            idUsuario: sessionStorage.getItem("ID_USUARIO")
+                        }),
+                    })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+                
+                        if (resposta.ok) {
+                        console.log('enviado para o backend dados da conquista 1')
+                        }
+                    })
+
                     setTimeout(() => {
                         window.location = 'menu.html';
                     }, 10000)
+
                 }       
             } else { // se forem diferentes, escondam denovo em 1 segundo e meio
                 setTimeout(() => {
