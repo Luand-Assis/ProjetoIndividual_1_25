@@ -22,7 +22,7 @@ header {
     background-color: var(--AzulEscuro);
     padding: 20px;
     box-shadow: 0px 0px 10px black;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .cabecalho {
     /* border: 1px solid black; */
@@ -90,7 +90,7 @@ header {
     width: 15%;
     background-color: var(--CinzaClaro);
     padding-bottom: 20px;
-    margin-left: 80px;
+    margin-left: 20px;
 }
 .ranking h3 {
     font-weight: 100;
@@ -108,8 +108,8 @@ header {
 }
 .dashboard {
     border: 1px solid black;
-    margin-left: 40px;
-    width: 70%;
+    margin-left: 10px;
+    width: 81%;
     height: 460px;
 }
 .kpi {
@@ -125,11 +125,11 @@ header {
     border-radius: 15px;
     border-style: none;
     box-shadow: 0 0 10px var(--CinzaClaro);
-    width: 30%;
+    width: 23%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 #indicador1 {
     font-size: 24px;
@@ -144,11 +144,11 @@ header {
     border-radius: 15px;
     border-style: none;
     box-shadow: 0 0 10px var(--CinzaClaro);
-    width: 30%;
+    width: 23%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 #indicador2 {
     font-size: 24px;
@@ -163,16 +163,34 @@ header {
     border-radius: 15px;
     border-style: none;
     box-shadow: 0 0 10px var(--CinzaClaro);
-    width: 30%;
+    width: 23%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 10px;
+}
+#kpi4 {
+    background-color: var(--AmareloPinguim);
+    border-radius: 15px;
+    border-style: none;
+    box-shadow: 0 0 10px var(--CinzaClaro);
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
 }
 #indicador3 {
     font-size: 24px;
 }
+#indicador4 {
+    font-size: 24px;
+}
 #pontuacao {
+    margin-top: 20px;
+    font-size: 22px;
+}
+#qtdPartidas {
     margin-top: 20px;
     font-size: 22px;
 }
