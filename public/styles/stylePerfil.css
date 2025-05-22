@@ -171,17 +171,23 @@ body {
 #conquista1 {
     border: 1px solid black;
     width: 60px;
-    background-image: url(../assets/achievements/achievement.webp);
+    background-image: url(../assets/achievements/achievement1_pb.png);
     background-position: center;
     background-size: 100% 100%;
 }
 #conquista2 {
     border: 1px solid black;
     width: 60px;
+    background-image: url(../assets/achievements/achievement2_pb.png);
+    background-position: center;
+    background-size: 100% 100%;
 }
 #conquista3 {
     border: 1px solid black;
     width: 60px;
+    background-image: url(../assets/achievements/achievement3_pb.png);
+    background-position: center;
+    background-size: 100% 100%;
 }
 #descricao1 {
     border: 1px solid var(--AmareloPinguim);
