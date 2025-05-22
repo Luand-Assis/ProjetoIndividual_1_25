@@ -12,7 +12,7 @@ function dadosPartida(idUsuario, erros, tempo, pontuacao) {
 
 function achievement1(idUsuario) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function achievement1():", idUsuario)
-    
+
     var instrucaoSql = `
             INSERT INTO TB_UsuarioConquista (idConquista, idUsuario) VALUES (1, ${idUsuario});
         `;
