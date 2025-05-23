@@ -105,6 +105,30 @@ function achievement3(req, res) {
     }
 }
 
+function pegarEstatisticas(req, res) {
+    var idUsuario = req.params.idUsuario;
+
+    if (idUsuario == undefined) {
+        console.log('idUsuario está indefinido!')
+    } else {
+         medidaModel.pegarEstatisticas(idUsuario)
+        .then(
+            function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve erro ao buscar dados das KPIs! ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+        );
+    }
+}
+
 function buscarUltimasMedidas(req, res) {
 
     const limite_linhas = 7;
@@ -151,6 +175,7 @@ module.exports = {
     achievement1,
     achievement2,
     achievement3,
+    pegarEstatisticas,
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal
 

@@ -136,7 +136,7 @@ header {
 }
 #tempo {
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 40px;
 }
 #kpi2 {
     /* border: 1px solid blue; */
@@ -155,7 +155,7 @@ header {
 }
 #erros {
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 40px;
 }
 #kpi3 {
     /* border: 1px solid pink; */
@@ -188,11 +188,11 @@ header {
 }
 #pontuacao {
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 40px;
 }
 #qtdPartidas {
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 40px;
 }
 .graficosModernos {
     border: 1px solid pink;
