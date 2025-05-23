@@ -169,21 +169,21 @@ body {
     width: 100%;
 }
 #conquista1 {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 60px;
     background-image: url(../assets/achievements/achievement1_pb.png);
     background-position: center;
     background-size: 100% 100%;
 }
 #conquista2 {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 60px;
     background-image: url(../assets/achievements/achievement2_pb.png);
     background-position: center;
     background-size: 100% 100%;
 }
 #conquista3 {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 60px;
     background-image: url(../assets/achievements/achievement3_pb.png);
     background-position: center;
@@ -217,8 +217,8 @@ body {
     border-radius: 30px;
     flex-direction: column;
     position: absolute;
-    bottom: -100px;
-    left: 90px;
+    bottom: -90px;
+    left: 95px;
 }
 #descricao3 {
     border: 1px solid var(--AmareloPinguim);
@@ -229,7 +229,7 @@ body {
     border-radius: 30px;
     flex-direction: column;
     position: absolute;
-    bottom: -100px;
+    bottom: -110px;
     left: 160px;
 }
 .botoes {
