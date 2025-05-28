@@ -55,8 +55,8 @@ function securityPasswd() {
 passwd = inputPassword.value;
 var mensagemPasswd = '';
 
-    if (passwd.length < 8) {
-        mensagemPasswd = `<span style="color: red;">A senha deve conter no mínimo 8 caracteres.<br>Incluir pelo menos 1 caractere especial.</span>`;
+    if (passwd.length < 6) {
+        mensagemPasswd = `<span style="color: red;">A senha deve conter no mínimo 6 caracteres.<br>Incluir pelo menos 1 caractere especial.</span>`;
         validacao_3 = false;
     } else if (
         passwd.includes('!') ||
