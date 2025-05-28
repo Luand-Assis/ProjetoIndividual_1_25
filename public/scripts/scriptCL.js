@@ -143,9 +143,9 @@ function cadastrar() {
         validacao_3 == false ||
         validacao_4 == false
     ) {
-        divErro.innerHTML = `<div id="divMensagemErro">Erro ao criar novo pinguim! <br>Tente novamente.</div> `;
+        divErro.innerHTML = `<div id="divMensagemErro">Erro ao criar novo pinguim!<br>Tente novamente.</div>`;
     } else {
-        divErro.innerHTML = '';
+        divErro.innerHTML = `<div id="divMensagemSucesso">Seu pinguim foi cadastrado!<br>Redirecionando para login...</div>`;
 
         var nicknameVar = username;
         var corVar = cor;
@@ -168,12 +168,11 @@ function cadastrar() {
             console.log("resposta: ", resposta);
     
             if (resposta.ok) {
-              alert('Novo pinguim cadastrado com sucesso!')
               console.log('enviado para o backend')
               
               setTimeout(() => {
                 window.location = "login.html";
-              }, "1000");
+              }, "1500");
     
               limparFormulario();
               finalizarAguardar();
@@ -204,9 +203,8 @@ function entrar() {
             divErroLogin.innerHTML = `<div class="Erro"><h4><u>Erro</u></h4>
                     <p>Seu login de pinguim está incorreto</p></div>`;
             return false;
-        }
-
-        console.log("FORM NICKNAME: ", nicknameVar);
+        } else {
+            console.log("FORM NICKNAME: ", nicknameVar);
         console.log("FORM EMAIL: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
@@ -235,10 +233,11 @@ function entrar() {
                     sessionStorage.ID_USUARIO = json.idUsuario;
                     sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
-                    alert('Login efetuado com sucesso!')
+                    divErroLogin.innerHTML = `<div class="sucesso"><h4><u>Sucesso</u></h4>
+                    <p>Entrando na conta...</p></div>`;
                     setTimeout(function () {
                         window.location = "./menu.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1500); // apenas para exibir o loading
 
                 });
 
@@ -254,4 +253,5 @@ function entrar() {
         })
 
         return false;
+        }    
 }
