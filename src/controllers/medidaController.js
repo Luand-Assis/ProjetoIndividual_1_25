@@ -33,6 +33,24 @@ function dadosPartida(req, res) {
     }
 }
 
+function leaderboard(req, res) {
+    medidaModel.leaderboard()
+        .then(
+            function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve erro ao buscar dados do leaderboard! ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+        );
+}
+
 function achievement1(req, res) {
     var idUsuario = req.body.idUsuario;
 
@@ -176,6 +194,7 @@ module.exports = {
     achievement2,
     achievement3,
     pegarEstatisticas,
+    leaderboard,
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal
 

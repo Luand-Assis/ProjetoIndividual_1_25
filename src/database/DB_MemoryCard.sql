@@ -46,6 +46,8 @@ idUsuario int,
 dataHora datetime default current_timestamp
 );
 
+select * from TB_UsuarioConquista;
+
 insert into TB_Conquistas values
 	(default, 'Primeira Vitória', 'Concluiu o Memory Card Game do Club Penguin.'),
 	(default, 'Memória Perfeita', 'Concluiu o Memory Card Game sem erros.'),
