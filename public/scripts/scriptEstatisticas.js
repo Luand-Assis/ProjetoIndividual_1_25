@@ -10,7 +10,7 @@
     function pegarEstatisticas() {
         var idUsuario = sessionStorage.getItem('ID_USUARIO');
         
-        fetch(`/medidas/pegarEstatisticas/${idUsuario}`, {
+        fetch(`/estatisticas/pegarEstatisticas/${idUsuario}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -39,7 +39,7 @@
     }
 
     function leaderboard() {
-      fetch(`/medidas/leaderboard`, {
+      fetch(`/estatisticas/leaderboard`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -66,7 +66,7 @@
             jogador4.innerHTML = leaderboard[3].nickname;
             pontos4.innerHTML = leaderboard[3].pontuacao;
             jogador5.innerHTML = leaderboard[4].nickname;
-            pontos5.innerHTML = leaderboard[5].pontuacao;
+            pontos5.innerHTML = leaderboard[4].pontuacao;
             jogador6.innerHTML = leaderboard[5].nickname;
             pontos6.innerHTML = leaderboard[5].pontuacao;
             jogador7.innerHTML = leaderboard[6].nickname;

@@ -4,6 +4,7 @@ body {
     padding: 0;
     font-family: fantasy;
     background: linear-gradient(to bottom, var(--AzulEscuro), var(--AzulCéu), var(--AzulGelo));
+    height: 97.7vh;
 }
 
 :root {

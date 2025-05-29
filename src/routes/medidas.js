@@ -19,12 +19,4 @@ router.post("/achievement3", function (req, res) {
     medidaController.achievement3(req, res);
 })
 
-router.get("/pegarEstatisticas/:idUsuario", function(req, res) {
-    medidaController.pegarEstatisticas(req, res);
-})
-
-router.get("/leaderboard", function(req, res) {
-    medidaController.leaderboard(req, res);
-})
-
 module.exports = router;
