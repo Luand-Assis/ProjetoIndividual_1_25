@@ -23,7 +23,7 @@ header {
     background-color: var(--AzulEscuro);
     padding: 20px;
     box-shadow: 0px 0px 10px black;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .cabecalho {
     /* border: 1px solid black; */
@@ -92,14 +92,15 @@ header {
     background-color: var(--CinzaClaro);
     padding-bottom: 20px;
     margin-left: 20px;
+    box-shadow: 0 0 5px black;
 }
 .ranking h3 {
     font-weight: 100;
-    font-size: 20px;
+    font-size: 24px;
     text-shadow: 0 0 10px var(--AmareloPinguim);
 }
 .ranking p {
-    margin: 8px;
+    margin: 10px;
 }
 .ranking .divisor {
     border: 1px solid var(--AmareloPinguim);
@@ -199,4 +200,9 @@ header {
     border: 1px solid pink;
     display: flex;
     justify-content: space-between;
+}
+
+/* ----- DETALHES DO LEADERBOARD ----- */
+#jogador1, #pontos1, #jogador2, #pontos2, #jogador3, #pontos3 {
+    text-shadow: 0 0 15px var(--AmareloPinguim);
 }
