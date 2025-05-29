@@ -201,8 +201,23 @@ header {
     border: 1px solid pink;
     display: flex;
     justify-content: space-between;
+    height: 330px;
+    padding: 30px 10px;
 }
-
+#GraficoPontos {
+    background-color: var(--CinzaClaro);
+    border: 3px solid var(--AmareloPinguim);
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    height: 270px;
+}
+#GraficoTempoErro {
+    background-color: var(--CinzaClaro);
+    border: 3px solid var(--AmareloPinguim);
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    height: 270px;
+}
 /* ----- DETALHES DO LEADERBOARD ----- */
 #jogador1, #pontos1, #jogador2, #pontos2, #jogador3, #pontos3 {
     text-shadow: 0 0 15px var(--AmareloPinguim);

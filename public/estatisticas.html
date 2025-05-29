@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styleEstatistica.css">
     <script src="./scripts/scriptEstatisticas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Estatísticas</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
                     <span id="tempo">null</span>
                 </div>
                 <div id="kpi2">
-                    <span id="indicador2">Erros Médio por Partida</span>
+                    <span id="indicador2">Erros Médios por Partida</span>
                     <span id="erros">null</span>
                 </div>
                 <div id="kpi3">
@@ -50,11 +51,150 @@
                 </div>
             </section>
             <section class="graficosModernos">
-                <div>grafico 1</div>
-                <div>grafico 2</div>
+                <div>
+                    <canvas id="GraficoTempoErro"></canvas>
+                </div>
+                <div>
+                    <canvas id="GraficoPontos"></canvas>
+                </div>
             </section>
         
         </section>
     </div>
 </body>
+
+<!-- ----- GRÁFICO 2 ----- -->
+<script>
+  const labels2 = [
+    'Partida 1',
+    'Partida 2',
+    'Partida 3',
+    'Partida 4',
+    'Partida 5',
+    'Partida 6'
+  ];
+
+  const data2 = {
+    labels: labels2,
+    datasets: [{
+      label: 'Pontuação',
+      backgroundColor: '#005B9E',
+      borderColor: '#005B9E',
+      data: [0, 0, 0, 0, 0, 0]
+    }]
+  };
+
+  const config2 = {
+    type: 'bar',
+    data: data2,
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Pontuação das Últimas 6 Partidas',
+                font: {
+                    size: 20
+                },
+                color: 'rgb(0, 0, 0)'
+            },
+            legend: {
+                labels: {
+                    color: 'rgb(0, 0, 0)'
+            }
+        }
+        },
+        scales: {
+            y: {
+                max: 1000,
+                ticks: {
+                    color: 'rgb(0, 0, 0)'
+            }
+            },
+            x: {
+                ticks: {
+                    color: 'rgb(0, 0, 0)'
+                }
+            }
+        }
+    }
+  };
+</script>
+
+<script>
+  const myChart2 = new Chart(
+    document.getElementById('GraficoPontos'),
+    config2
+  );
+</script>
+
+<!-- ----- GRÁFICO 1 ----- -->
+<script>
+  const labels1 = [
+    'Partida 1',
+    'Partida 2',
+    'Partida 3',
+    'Partida 4',
+    'Partida 5',
+    'Partida 6'
+  ];
+
+  const data1 = {
+    labels: labels1,
+    datasets: [{
+      label: 'Tempo',
+      backgroundColor: '#0092D8',
+      borderColor: '#0092D8',
+      data: [0, 0, 0, 0, 0, 0]
+    },
+    {
+        label: 'Erros',
+        backgroundColor: 'rgb(175, 21, 21)',
+        borderColor: 'rgb(175, 21, 21)',
+        data: [0, 0, 0, 0, 0, 0]
+    }]
+  };
+
+  const config1 = {
+    type: 'line',
+    data: data1,
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Quantidade de Tempo e Erros das Últimas 6 partidas',
+                font: {
+                    size: 20,
+                },
+                color: 'rgb(0, 0, 0)'
+            },
+            legend: {
+                labels: {
+                    color: 'rgb(0, 0, 0)'
+                }
+            }
+        },
+        scales: {
+                y: {
+                    min: '0',
+                    ticks: {
+                        color: 'rgb(0, 0, 0)'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'rgb(0, 0, 0)'
+                    }
+                }
+            }
+    }
+  };
+</script>
+
+<script>
+  const myChart1 = new Chart(
+    document.getElementById('GraficoTempoErro'),
+    config1
+  );
+</script>
+
 </html>
