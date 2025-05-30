@@ -29,10 +29,27 @@
           })
           .then(function (exibirDados) {
             console.log(exibirDados)
-            tempo.innerHTML = exibirDados[0].tempo;
-            erros.innerHTML = exibirDados[0].erros;
-            pontuacao.innerHTML = exibirDados[0].pontos;
+
+            if (exibirDados[0].tempo == null) {
+              tempo.innerHTML = 'Sem Partidas'
+            } else {
+              tempo.innerHTML = exibirDados[0].tempo;
+            }
+
+            if (exibirDados[0].erros == null) {
+              erros.innerHTML = 'Sem Partidas'
+            } else {
+              erros.innerHTML = exibirDados[0].erros;
+            }
+
+            if (exibirDados[0].pontos == null) {
+              pontuacao.innerHTML = 'Sem Partidas'
+            } else {
+              pontuacao.innerHTML = exibirDados[0].pontos;
+            }
+
             qtdPartidas.innerHTML = exibirDados[0].partidas;
+            
           })
           .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
