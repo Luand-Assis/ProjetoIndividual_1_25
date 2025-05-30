@@ -1,7 +1,6 @@
-create database DB_MemoryCard;
-use DB_MemoryCard;
+create database DB_ProjetoIndividual;
+use DB_ProjetoIndividual;
 
-select * from TB_Usuarios;
 create table TB_Usuarios (
 idUsuario int primary key auto_increment,
 nickname varchar(12) not null unique,
@@ -21,13 +20,6 @@ idUsuario int,
 qtd_erros int not null,
 tempo_segundos int not null
 );
-select 
-	nickname, 
-    max(pontuacao) 
-from TB_Usuarios u join TB_Partidas p 
-on u.idUsuario = p.idUsuario 
-group by nickname 
-order by max(pontuacao) desc;
 
 alter table TB_Partidas add column pontuacao int not null;
 
@@ -46,9 +38,12 @@ idUsuario int,
 dataHora datetime default current_timestamp
 );
 
-select * from TB_UsuarioConquista;
-
 insert into TB_Conquistas values
 	(default, 'Primeira Vitória', 'Concluiu o Memory Card Game do Club Penguin.'),
 	(default, 'Memória Perfeita', 'Concluiu o Memory Card Game sem erros.'),
 	(default, 'Rápido como um Pinguim', 'Concluiu o Memory Card Game em menos de 15 segundos.');
+    
+select * from TB_Usuarios;
+select * from TB_Partidas;
+select * from TB_UsuarioConquista;
+select * from TB_Conquistas;

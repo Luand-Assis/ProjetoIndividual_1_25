@@ -27,60 +27,67 @@
     </div>
     <div class="mcd" id="jogo">
 
-    <div class="fila1">
-        <div class="carta" id="carta0" onclick="virar(this)">
-            <div class="frente" id="frente0"><img src="" alt=""></div>
-            <div class="atras"></div>
+        <div class="timing">
+            <span>Tempo: </span><span id="tempo_jogado">0</span>
         </div>
-        <div class="carta" id="carta1" onclick="virar(this)">
-            <div class="frente" id="frente1"><img src="" alt=""></div>
-            <div class="atras"></div>
+        <div class="contagem_erros">
+            <span>Erros: </span><span id="erros_jogado">0</span>
         </div>
-        <div class="carta" id="carta2" onclick="virar(this)">
-            <div class="frente" id="frente2"><img src="" alt=""></div>
-            <div class="atras"></div>
+
+        <div class="fila1">
+            <div class="carta" id="carta0" onclick="virar(this)">
+                <div class="frente" id="frente0"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta1" onclick="virar(this)">
+                <div class="frente" id="frente1"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta2" onclick="virar(this)">
+                <div class="frente" id="frente2"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta3" onclick="virar(this)">
+                <div class="frente" id="frente3"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
         </div>
-        <div class="carta" id="carta3" onclick="virar(this)">
-            <div class="frente" id="frente3"><img src="" alt=""></div>
-            <div class="atras"></div>
+        <div class="fila2">
+            <div class="carta" id="carta4" onclick="virar(this)">
+                <div class="frente" id="frente4"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta5" onclick="virar(this)">
+                <div class="frente" id="frente5"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta6" onclick="virar(this)">
+                <div class="frente" id="frente6"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta7" onclick="virar(this)">
+                <div class="frente" id="frente7"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
         </div>
-    </div>
-    <div class="fila2">
-        <div class="carta" id="carta4" onclick="virar(this)">
-            <div class="frente" id="frente4"><img src="" alt=""></div>
-            <div class="atras"></div>
+        <div class="fila3">
+            <div class="carta" id="carta8" onclick="virar(this)">
+                <div class="frente" id="frente8"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta9" onclick="virar(this)">
+                <div class="frente" id="frente9"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta10" onclick="virar(this)">
+                <div class="frente" id="frente10"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
+            <div class="carta" id="carta11" onclick="virar(this)">
+                <div class="frente" id="frente11"><img src="" alt=""></div>
+                <div class="atras"></div>
+            </div>
         </div>
-        <div class="carta" id="carta5" onclick="virar(this)">
-            <div class="frente" id="frente5"><img src="" alt=""></div>
-            <div class="atras"></div>
-        </div>
-        <div class="carta" id="carta6" onclick="virar(this)">
-            <div class="frente" id="frente6"><img src="" alt=""></div>
-            <div class="atras"></div>
-        </div>
-        <div class="carta" id="carta7" onclick="virar(this)">
-            <div class="frente" id="frente7"><img src="" alt=""></div>
-            <div class="atras"></div>
-        </div>
-    </div>
-    <div class="fila3">
-        <div class="carta" id="carta8" onclick="virar(this)">
-            <div class="frente" id="frente8"><img src="" alt=""></div>
-            <div class="atras"></div>
-        </div>
-        <div class="carta" id="carta9" onclick="virar(this)">
-            <div class="frente" id="frente9"><img src="" alt=""></div>
-            <div class="atras"></div>
-        </div>
-        <div class="carta" id="carta10" onclick="virar(this)">
-            <div class="frente" id="frente10"><img src="" alt=""></div>
-            <div class="atras"></div>
-        </div>
-        <div class="carta" id="carta11" onclick="virar(this)">
-            <div class="frente" id="frente11"><img src="" alt=""></div>
-            <div class="atras"></div>
-        </div>
-    </div>
     </div>
 
 </body>
@@ -143,6 +150,8 @@
 
         cronometro = setInterval(() => { // inicia o cronometro
             tempo++;
+            tempo_jogado.innerHTML = `${tempo}`;
+            erros_jogado.innerHTML = `${erros}`;
         }, 1000)
 
         }, 3000)
@@ -251,7 +260,7 @@
                         posicao.innerHTML = `
                         <div class="end-game">
                             <div class="puffle"></div>
-                            <div class="texto"><p>Parabéns!<br>Você concluiu o Memory Card Game<br>em ${tempo} segundos com ${erros} erros. Pontuação: ${pontos}.</p></div>
+                            <div class="texto"><p>Parabéns!<br>Você concluiu o Memory Card Game<br>em ${tempo} segundos com ${erros} erros. Pontuação: ${pontos}.<br></p></div>
                         </div>`;
                         clearInterval(cronometro); // para o cronometro
                     }, 1000)

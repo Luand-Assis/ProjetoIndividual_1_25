@@ -87,7 +87,9 @@ header {
     justify-content: space-between;
     width: 20%;
     height: 120px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    padding-left: 5px;
     text-align: center;
     border-radius: 25px;
     background-color: var(--CinzaClaro);
@@ -148,6 +150,33 @@ header {
     flex-direction: column;
     justify-self: center;
     margin-bottom: 30px;
+    position: relative;
+}
+.timing {
+    border: 3px solid var(--AmareloPinguim);
+    background-color: var(--CinzaClaro);
+    border-radius: 10px;
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    bottom: 98%;
+    left: 24%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contagem_erros {
+    border: 3px solid var(--AmareloPinguim);
+    background-color: var(--CinzaClaro);
+    border-radius: 10px;
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    bottom: 98%;
+    right: 24%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .carta {
     display: flex;
