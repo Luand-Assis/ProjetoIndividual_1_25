@@ -6,6 +6,7 @@
       leaderboard()
       pegarEstatisticas()
       grafico1()
+      grafico2()
     }
 
     function pegarEstatisticas() {
@@ -49,7 +50,7 @@
             }
 
             qtdPartidas.innerHTML = exibirDados[0].partidas;
-            
+
           })
           .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);

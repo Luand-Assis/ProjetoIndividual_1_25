@@ -98,8 +98,8 @@
         )
     }
 
-    function plotarGrafico1(dadosGph1, idUsuario) {
-        console.log('iniciando plotagem do gráfico...');
+    function plotarGrafico1(dadosGph1) {
+        console.log('iniciando plotagem do gráfico 1...');
 
         var labels1 = [
             'Partida1',
@@ -173,69 +173,184 @@
     config1
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     // <!-- ----- GRÁFICO 2 ----- -->
-  const labels2 = [
-    'Partida 1',
-    'Partida 2',
-    'Partida 3',
-    'Partida 4',
-    'Partida 5',
-    'Partida 6'
-  ];
-
-  const data2 = {
-    labels: labels2,
-    datasets: [{
-      label: 'Pontuação',
-      backgroundColor: '#005B9E',
-      borderColor: '#005B9E',
-      data: [0, 0, 0, 0, 0, 0]
-    }]
-  };
-
-  const config2 = {
-    type: 'bar',
-    data: data2,
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Pontuação das Últimas 6 Partidas',
-                font: {
-                    size: 20
-                },
-                color: 'rgb(0, 0, 0)'
-            },
-            legend: {
-                labels: {
-                    color: 'rgb(0, 0, 0)'
+    function grafico2() {
+        var idUsuario = sessionStorage.getItem('ID_USUARIO');
+        
+        fetch(`/estatisticas/grafico2/${idUsuario}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
             }
+        })
+        .then(function (resposta) {
+            console.log(resposta);
+            
+            if (resposta.ok) {
+                console.log('Busquei os dados de Tempo e Erros', resposta)
+                return resposta.json();
+            } else {
+                throw "Erro ao buscar dados no data base";
+            }
+        })
+        .then(
+            function (dadosGph2) {
+                console.log(dadosGph2);
+                dadosGph2.reverse()
+                plotarGrafico2(dadosGph2, idUsuario)
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+            }
+        )
+    }
+
+    function plotarGrafico2(dadosGph2, idUsuario) {
+        console.log('iniciando plotagem do gráfico 2...');
+
+        var labels2 = [
+            'Partida1',
+            'Partida2',
+            'Partida3',
+            'Partida4',
+            'Partida5',
+            'Partida6'
+        ];
+
+        var data2 = {
+            labels: labels2,
+            datasets: [{
+            label: 'Tempo',
+            backgroundColor: '#0092D8',
+            borderColor: '#0092D8',
+            data: []
+            }]
         }
-        },
-        scales: {
-            y: {
-                max: 1000,
-                ticks: {
-                    color: 'rgb(0, 0, 0)'
-            }
-            },
-            x: {
-                ticks: {
-                    color: 'rgb(0, 0, 0)'
+
+        for (var i = 0; i < dadosGph2.length; i++) {
+            dado_atual_pontuacao = dadosGph2[i].pontuacao;
+
+            data2.datasets[0].data.push(dado_atual_pontuacao);
+        }
+
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Pontuação das Últimas 6 Partidas',
+                        font: {
+                            size: 20
+                        },
+                        color: 'rgb(0, 0, 0)'
+                    },
+                    legend: {
+                        labels: {
+                            color: 'rgb(0, 0, 0)'
+                    }
+                }
+                },
+                scales: {
+                    y: {
+                        max: 1000,
+                        ticks: {
+                            color: 'rgb(0, 0, 0)'
+                    }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'rgb(0, 0, 0)'
+                        }
+                    }
                 }
             }
-        }
-    }
-  };
-</script>
+        };
 
-<script>
-  const myChart2 = new Chart(
-    document.getElementById('GraficoPontos'),
-    config2
-  );
-</script>
+        var myChart1 = new Chart(
+        document.getElementById('GraficoPontos'),
+        config2
+    );
+}
+
+//   const labels2 = [
+//     'Partida 1',
+//     'Partida 2',
+//     'Partida 3',
+//     'Partida 4',
+//     'Partida 5',
+//     'Partida 6'
+//   ];
+
+//   const data2 = {
+//     labels: labels2,
+//     datasets: [{
+//       label: 'Pontuação',
+//       backgroundColor: '#005B9E',
+//       borderColor: '#005B9E',
+//       data: [0, 0, 0, 0, 0, 0]
+//     }]
+//   };
+
+//   const config2 = {
+//     type: 'bar',
+//     data: data2,
+//     options: {
+//         plugins: {
+//             title: {
+//                 display: true,
+//                 text: 'Pontuação das Últimas 6 Partidas',
+//                 font: {
+//                     size: 20
+//                 },
+//                 color: 'rgb(0, 0, 0)'
+//             },
+//             legend: {
+//                 labels: {
+//                     color: 'rgb(0, 0, 0)'
+//             }
+//         }
+//         },
+//         scales: {
+//             y: {
+//                 max: 1000,
+//                 ticks: {
+//                     color: 'rgb(0, 0, 0)'
+//             }
+//             },
+//             x: {
+//                 ticks: {
+//                     color: 'rgb(0, 0, 0)'
+//                 }
+//             }
+//         }
+//     }
+//   };
+// </script>
+
+// <script>
+//   const myChart2 = new Chart(
+//     document.getElementById('GraficoPontos'),
+//     config2
+//   );
+// </script>
 
 <!-- ----- GRÁFICO 1 ----- -->
 <script>

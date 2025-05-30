@@ -66,8 +66,32 @@ function grafico1(req, res) {
     }
 }
 
+function grafico2(req, res) {
+    var idUsuario = req.params.idUsuario;
+
+    if (idUsuario == undefined) {
+        console.log('ID do usuário indefinido')
+    } else {
+        estatisticasModel.grafico2(idUsuario)
+        .then(
+            function (resultado) {
+                res.json(resultado)
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro)
+                console.log(
+                        "\nHouve erro ao buscar dados do leaderboard! ",
+                        erro.sqlMessage
+                );
+            }
+        )
+    }
+}
+
 module.exports = {
     pegarEstatisticas,
     leaderboard,
-    grafico1
+    grafico1,
+    grafico2
 }

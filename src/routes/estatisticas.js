@@ -15,4 +15,8 @@ router.get("/grafico1/:idUsuario", function (req, res) {
     estatisticasController.grafico1(req, res);
 })
 
+router.get("/grafico2/:idUsuario", function (req, res) {
+    estatisticasController.grafico2(req, res);
+})
+
 module.exports = router;
