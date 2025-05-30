@@ -3,6 +3,23 @@
     }
 
     window.onload = () => {
+
+      nome_usuario.innerHTML = sessionStorage.NICKNAME_USUARIO;
+
+        if (sessionStorage.COR_USUARIO == '1') {
+            img_pinguim.style.backgroundImage = "url('../assets/ColorPenguin/pinguim_1.png')"
+        } else if (sessionStorage.COR_USUARIO == '2') {
+            img_pinguim.style.backgroundImage = "url('../assets/ColorPenguin/pinguim_2.png')"
+        } else if (sessionStorage.COR_USUARIO == '3') {
+            img_pinguim.style.backgroundImage = "url('../assets/ColorPenguin/pinguim_3.png')"
+        } else if (sessionStorage.COR_USUARIO == '4') {
+            img_pinguim.style.backgroundImage = "url('../assets/ColorPenguin/pinguim_4.png')"
+        } else if (sessionStorage.COR_USUARIO == '5') {
+            img_pinguim.style.backgroundImage = "url('../assets/ColorPenguin/pinguim_5.png')"
+        } else if (sessionStorage.COR_USUARIO == '6') {
+            img_pinguim.style.backgroundImage = "url('../assets/ColorPenguin/pinguim_6.png')"
+        }
+
       leaderboard()
       pegarEstatisticas()
       grafico1()

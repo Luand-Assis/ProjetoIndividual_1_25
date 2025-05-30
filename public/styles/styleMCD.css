@@ -44,25 +44,40 @@ header {
     color: var(--AmareloPinguim);
     text-shadow: 0 0 5px black;
 }
-.logo {
+.usuario {
     /* border: 1px solid black; */
-    width: 10%;
-    height: 40px;
-    background-image: url(../assets/logo/johndeere-memoria-01-logo.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
+#img_pinguim {
+    border: 2px solid yellow;
+    height: 100%;
+    width: 50px;
+    border-radius: 80px;
+    background-image: url(../assets/ColorPenguin/pinguim_1.png);
     background-position: center;
-    cursor: pointer;
+    background-size: cover;
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+#nome_usuario {
+    font-size: 20px;
+    color: var(--AmareloPinguim);   
+    text-shadow: 0 0 5px black;
 }
 .voltar {
     /* border: 1px solid black; */
     display: flex;
     /* margin-left: 33%; */
-    width: 10%;
+    width: 20%;
+    display: flex;
+    justify-content: end;
 }
 .voltar #botaoMenu {
     background-color: rgb(175, 21, 21);
-    width: 100%;
+    width: 100px;
     font-weight: bold;
     font-size: 16px;
     font-weight: bold;
