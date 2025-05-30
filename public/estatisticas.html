@@ -63,8 +63,118 @@
     </div>
 </body>
 
-<!-- ----- GRÁFICO 2 ----- -->
+
+
 <script>
+    function grafico1() {
+        var idUsuario = sessionStorage.getItem('ID_USUARIO');
+        
+        fetch(`/estatisticas/grafico1/${idUsuario}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+        .then(function (resposta) {
+            console.log(resposta);
+            
+            if (resposta.ok) {
+                console.log('Busquei os dados de Tempo e Erros', resposta)
+                return resposta.json();
+            } else {
+                throw "Erro ao buscar dados no data base";
+            }
+        })
+        .then(
+            function (dadosGph1) {
+                console.log(dadosGph1);
+                dadosGph1.reverse()
+                plotarGrafico1(dadosGph1, idUsuario)
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+            }
+        )
+    }
+
+    function plotarGrafico1(dadosGph1, idUsuario) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var labels1 = [
+            'Partida1',
+            'Partida2',
+            'Partida3',
+            'Partida4',
+            'Partida5',
+            'Partida6'
+        ];
+
+        var data1 = {
+            labels: labels1,
+            datasets: [{
+            label: 'Tempo',
+            backgroundColor: '#0092D8',
+            borderColor: '#0092D8',
+            data: []
+        },
+        {
+            label: 'Erros',
+            backgroundColor: 'rgb(175, 21, 21)',
+            borderColor: 'rgb(175, 21, 21)',
+            data: []
+        }]
+    }
+
+    for (var i = 0; i < dadosGph1.length; i++) {
+        var dado_atual_erro = dadosGph1[i].graph_erros;
+        var dado_atual_tempo = dadosGph1[i].graph_tempo;
+
+        data1.datasets[0].data.push(dado_atual_tempo+1);
+        data1.datasets[1].data.push(dado_atual_erro);
+    }
+
+    const config1 = {
+    type: 'bar',
+    data: data1,
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Quantidade de Tempo e Erros das Últimas 6 partidas',
+                font: {
+                    size: 20,
+                },
+                color: 'rgb(0, 0, 0)'
+            },
+            legend: {
+                labels: {
+                    color: 'rgb(0, 0, 0)'
+                }
+            }
+        },
+        scales: {
+                y: {
+                    ticks: {
+                        color: 'rgb(0, 0, 0)'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'rgb(0, 0, 0)'
+                    }
+                }
+            }
+    }
+  };
+
+    var myChart1 = new Chart(
+    document.getElementById('GraficoTempoErro'),
+    config1
+  );
+}
+    
+    // <!-- ----- GRÁFICO 2 ----- -->
   const labels2 = [
     'Partida 1',
     'Partida 2',
@@ -129,72 +239,72 @@
 
 <!-- ----- GRÁFICO 1 ----- -->
 <script>
-  const labels1 = [
-    'Partida 1',
-    'Partida 2',
-    'Partida 3',
-    'Partida 4',
-    'Partida 5',
-    'Partida 6'
-  ];
+//   const labels11 = [
+//     'Partida 1',
+//     'Partida 2',
+//     'Partida 3',
+//     'Partida 4',
+//     'Partida 5',
+//     'Partida 6'
+//   ];
 
-  const data1 = {
-    labels: labels1,
-    datasets: [{
-      label: 'Tempo',
-      backgroundColor: '#0092D8',
-      borderColor: '#0092D8',
-      data: [0, 0, 0, 0, 0, 0]
-    },
-    {
-        label: 'Erros',
-        backgroundColor: 'rgb(175, 21, 21)',
-        borderColor: 'rgb(175, 21, 21)',
-        data: [0, 0, 0, 0, 0, 0]
-    }]
-  };
+//   const data1 = {
+//     labels: labels11,
+//     datasets: [{
+//       label: 'Tempo',
+//       backgroundColor: '#0092D8',
+//       borderColor: '#0092D8',
+//       data: [0, 0, 0, 0, 0, 0]
+//     },
+//     {
+//       label: 'Erros',
+//       backgroundColor: 'rgb(175, 21, 21)',
+//       borderColor: 'rgb(175, 21, 21)',
+//       data: [0, 0, 0, 0, 0, 0]
+//     }]
+//   };
 
-  const config1 = {
-    type: 'line',
-    data: data1,
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Quantidade de Tempo e Erros das Últimas 6 partidas',
-                font: {
-                    size: 20,
-                },
-                color: 'rgb(0, 0, 0)'
-            },
-            legend: {
-                labels: {
-                    color: 'rgb(0, 0, 0)'
-                }
-            }
-        },
-        scales: {
-                y: {
-                    min: '0',
-                    ticks: {
-                        color: 'rgb(0, 0, 0)'
-                    }
-                },
-                x: {
-                    ticks: {
-                        color: 'rgb(0, 0, 0)'
-                    }
-                }
-            }
-    }
-  };
+//   const config1 = {
+//     type: 'line',
+//     data: data1,
+//     options: {
+//         plugins: {
+//             title: {
+//                 display: true,
+//                 text: 'Quantidade de Tempo e Erros das Últimas 6 partidas',
+//                 font: {
+//                     size: 20,
+//                 },
+//                 color: 'rgb(0, 0, 0)'
+//             },
+//             legend: {
+//                 labels: {
+//                     color: 'rgb(0, 0, 0)'
+//                 }
+//             }
+//         },
+//         scales: {
+//                 y: {
+//                     min: '0',
+//                     ticks: {
+//                         color: 'rgb(0, 0, 0)'
+//                     }
+//                 },
+//                 x: {
+//                     ticks: {
+//                         color: 'rgb(0, 0, 0)'
+//                     }
+//                 }
+//             }
+//     }
+//   };
 </script>
 
-<script>
+<!-- <script>
   const myChart1 = new Chart(
     document.getElementById('GraficoTempoErro'),
     config1
   );
-</script>
+</script> -->
 
 </html>

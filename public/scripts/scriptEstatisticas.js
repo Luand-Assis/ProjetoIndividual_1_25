@@ -5,6 +5,7 @@
     window.onload = () => {
       leaderboard()
       pegarEstatisticas()
+      grafico1()
     }
 
     function pegarEstatisticas() {

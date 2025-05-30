@@ -11,4 +11,8 @@ router.get("/leaderboard", function(req, res) {
     estatisticasController.leaderboard(req, res);
 })
 
+router.get("/grafico1/:idUsuario", function (req, res) {
+    estatisticasController.grafico1(req, res);
+})
+
 module.exports = router;
