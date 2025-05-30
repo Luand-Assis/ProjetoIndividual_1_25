@@ -63,8 +63,6 @@
     </div>
 </body>
 
-
-
 <script>
     function grafico1() {
         var idUsuario = sessionStorage.getItem('ID_USUARIO');
@@ -102,12 +100,12 @@
         console.log('iniciando plotagem do gráfico 1...');
 
         var labels1 = [
-            'Partida1',
-            'Partida2',
-            'Partida3',
-            'Partida4',
-            'Partida5',
-            'Partida6'
+            'Partida 1',
+            'Partida 2',
+            'Partida 3',
+            'Partida 4',
+            'Partida 5',
+            'Partida 6'
         ];
 
         var data1 = {
@@ -175,19 +173,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
     // <!-- ----- GRÁFICO 2 ----- -->
     function grafico2() {
         var idUsuario = sessionStorage.getItem('ID_USUARIO');
@@ -225,12 +210,12 @@
         console.log('iniciando plotagem do gráfico 2...');
 
         var labels2 = [
-            'Partida1',
-            'Partida2',
-            'Partida3',
-            'Partida4',
-            'Partida5',
-            'Partida6'
+            'Partida 1',
+            'Partida 2',
+            'Partida 3',
+            'Partida 4',
+            'Partida 5',
+            'Partida 6'
         ];
 
         var data2 = {
@@ -289,137 +274,5 @@
         config2
     );
 }
-
-//   const labels2 = [
-//     'Partida 1',
-//     'Partida 2',
-//     'Partida 3',
-//     'Partida 4',
-//     'Partida 5',
-//     'Partida 6'
-//   ];
-
-//   const data2 = {
-//     labels: labels2,
-//     datasets: [{
-//       label: 'Pontuação',
-//       backgroundColor: '#005B9E',
-//       borderColor: '#005B9E',
-//       data: [0, 0, 0, 0, 0, 0]
-//     }]
-//   };
-
-//   const config2 = {
-//     type: 'bar',
-//     data: data2,
-//     options: {
-//         plugins: {
-//             title: {
-//                 display: true,
-//                 text: 'Pontuação das Últimas 6 Partidas',
-//                 font: {
-//                     size: 20
-//                 },
-//                 color: 'rgb(0, 0, 0)'
-//             },
-//             legend: {
-//                 labels: {
-//                     color: 'rgb(0, 0, 0)'
-//             }
-//         }
-//         },
-//         scales: {
-//             y: {
-//                 max: 1000,
-//                 ticks: {
-//                     color: 'rgb(0, 0, 0)'
-//             }
-//             },
-//             x: {
-//                 ticks: {
-//                     color: 'rgb(0, 0, 0)'
-//                 }
-//             }
-//         }
-//     }
-//   };
-// </script>
-
-// <script>
-//   const myChart2 = new Chart(
-//     document.getElementById('GraficoPontos'),
-//     config2
-//   );
-// </script>
-
-<!-- ----- GRÁFICO 1 ----- -->
-<script>
-//   const labels11 = [
-//     'Partida 1',
-//     'Partida 2',
-//     'Partida 3',
-//     'Partida 4',
-//     'Partida 5',
-//     'Partida 6'
-//   ];
-
-//   const data1 = {
-//     labels: labels11,
-//     datasets: [{
-//       label: 'Tempo',
-//       backgroundColor: '#0092D8',
-//       borderColor: '#0092D8',
-//       data: [0, 0, 0, 0, 0, 0]
-//     },
-//     {
-//       label: 'Erros',
-//       backgroundColor: 'rgb(175, 21, 21)',
-//       borderColor: 'rgb(175, 21, 21)',
-//       data: [0, 0, 0, 0, 0, 0]
-//     }]
-//   };
-
-//   const config1 = {
-//     type: 'line',
-//     data: data1,
-//     options: {
-//         plugins: {
-//             title: {
-//                 display: true,
-//                 text: 'Quantidade de Tempo e Erros das Últimas 6 partidas',
-//                 font: {
-//                     size: 20,
-//                 },
-//                 color: 'rgb(0, 0, 0)'
-//             },
-//             legend: {
-//                 labels: {
-//                     color: 'rgb(0, 0, 0)'
-//                 }
-//             }
-//         },
-//         scales: {
-//                 y: {
-//                     min: '0',
-//                     ticks: {
-//                         color: 'rgb(0, 0, 0)'
-//                     }
-//                 },
-//                 x: {
-//                     ticks: {
-//                         color: 'rgb(0, 0, 0)'
-//                     }
-//                 }
-//             }
-//     }
-//   };
 </script>
-
-<!-- <script>
-  const myChart1 = new Chart(
-    document.getElementById('GraficoTempoErro'),
-    config1
-  );
-</script> -->
-
 </html>
