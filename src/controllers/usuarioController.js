@@ -2,18 +2,15 @@ var usuarioModel = require("../models/usuarioModel");
 
 function autenticar(req, res) {
     var nickname = req.body.nicknameServer;
-    var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
     if (nickname == undefined) {
         res.status(400).send("Seu nome de pinguim está indefinido!")
-    } else if (email == undefined) {
-        res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
 
-        usuarioModel.autenticar(nickname, email, senha)
+        usuarioModel.autenticar(nickname, senha)
             .then(
                 function (resultadoAutenticar) {
                     console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);

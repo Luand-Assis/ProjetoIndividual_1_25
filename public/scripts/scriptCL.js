@@ -192,12 +192,10 @@ function cadastrar() {
 
 function entrar() {
         var nicknameVar = inputUsername.value;
-        var emailVar = inputEmail.value;
         var senhaVar = inputPassword.value;
 
         if (
             nicknameVar == "" ||
-            emailVar == "" ||
             senhaVar == ""
         ) {
             divErroLogin.innerHTML = `<div class="Erro"><h4><u>Erro</u></h4>
@@ -205,8 +203,7 @@ function entrar() {
             return false;
         } else {
             console.log("FORM NICKNAME: ", nicknameVar);
-        console.log("FORM EMAIL: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+            console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -215,7 +212,6 @@ function entrar() {
             },
             body: JSON.stringify({
                 nicknameServer: nicknameVar,
-                emailServer: emailVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
