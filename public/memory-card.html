@@ -205,19 +205,19 @@
             console.log(primeiraCartaDiv);
 
         } else if (contador == 2) { // quando contador = 2 ele compara o ATRIBUTO das cartas
+            bloquear = true; // bloqueia clicar nas cartas
             segundaCartaImg = CartaSelecionada.querySelector('.frente img').getAttribute('src');
             segundaCartaDiv = CartaSelecionada;
             console.log(segundaCartaImg);
             console.log(segundaCartaDiv);
-            bloquear = true; // bloqueia clicar nas cartas
 
             if (primeiraCartaImg == segundaCartaImg) { // se forem iguais, continuem visíveis
+                bloquear = false // se as cartas forem iguais, ai pode continuar clicando
                 primeiraCartaDiv.querySelector('.frente img').style.display = 'block';
                 segundaCartaDiv.querySelector('.frente img').style.display = 'block';
                 primeiraCartaDiv.onclick = null;
                 segundaCartaDiv.onclick = null;
                 contador = 0;
-                bloquear = false // se as cartas forem iguais, ai pode continuar clicando
 
                  if ( // se todas as divs nao tiverem mais onclick
                     carta0.onclick == null &&
@@ -336,11 +336,11 @@
                 }       
             } else { // se forem diferentes, escondam denovo em 1 segundo e meio
                 setTimeout(() => {
+                    bloquear = false; // se as cartas forem diferentes, pode clicar nelas novamente em 1 segundo e meio
                     primeiraCartaDiv.querySelector('.frente').style.display = 'none';
                     primeiraCartaDiv.querySelector('.atras').style.display = 'block';
                     segundaCartaDiv.querySelector('.frente').style.display = 'none';
                     segundaCartaDiv.querySelector('.atras').style.display = 'block';
-                    bloquear = false; // se as cartas forem diferentes, pode clicar nelas novamente em 1 segundo e meio
                 }, 1500);
 
                 erros++;
